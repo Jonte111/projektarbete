@@ -7,7 +7,7 @@ public class Game {
     public Game(int numberOfPlayers, int numberOfRounds){
         int playerNum = 1;
         while(numberOfPlayers > 0){
-            players.add( new Player("Player"+playerNum, 1000, null));
+            players.add( new Player(playerNum, 1000, null));
             numberOfPlayers--;
             playerNum++;
         }
