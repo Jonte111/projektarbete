@@ -13,10 +13,6 @@ public class Game {
         }
         //Playing the rounds
         while(numberOfRounds > 0){
-            System.out.println(players.name);
-
-
-
 
 
             numberOfRounds--;

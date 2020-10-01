@@ -1,12 +1,13 @@
 package projektMain;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 public class Player {
     public int name;
     public int money;
-    private ArrayList<Animal> playerOwnedAnimals;
+    ArrayList<Animal> playerOwnedAnimals = new ArrayList<Animal>();
+
+    //ArrayList<Animal> playerOwnedAnimals;
     //Hashtable<String, Integer> food = new Hashtable<String, Integer>();
     //, Hashtable<String, Integer>
     //Player needs a ArrayList to store animals and food
