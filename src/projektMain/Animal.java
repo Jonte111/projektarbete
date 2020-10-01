@@ -6,7 +6,7 @@ public abstract class Animal {
     private int health;
 
     public Animal(String name, String gender, int health){
-        this.name = name;
+        this.name=name;
         this.gender=gender;
         this.health=health;
     }
