@@ -13,7 +13,10 @@ public class Game {
         }
         //Playing the rounds
         while(numberOfRounds > 0){
-
+        for(var pointer: players){
+            System.out.println("Name of the player");
+            System.out.println(pointer.name);
+        }
 
             numberOfRounds--;
         }
