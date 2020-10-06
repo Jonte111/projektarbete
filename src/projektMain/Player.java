@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Player {
     public int name;
-    public int money;
+    public double money;
     ArrayList<Animal> playerOwnedAnimals = new ArrayList<Animal>();
 
     //ArrayList<Animal> playerOwnedAnimals;
@@ -13,7 +13,7 @@ public class Player {
     //Player needs a ArrayList to store animals and food
     //Hashtable<food, quantity>; HashMap<String food, int quantity>
 
-    public Player(int name, int money, ArrayList<Animal> playerOwnedAnimals) {
+    public Player(int name, double money, ArrayList<Animal> playerOwnedAnimals) {
         this.name = name;
         this.money = money;
         this.playerOwnedAnimals=playerOwnedAnimals;
