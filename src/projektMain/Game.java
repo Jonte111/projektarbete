@@ -9,6 +9,8 @@ public class Game {
         Scanner scanInt = new Scanner(System.in);
         Scanner scanLine = new Scanner(System.in);
         int playerNum = 1;
+        int animalType;
+
         while(numberOfPlayers > 0){
             players.add( new Player(playerNum, 1000, null, null));
             numberOfPlayers--;
@@ -30,7 +32,14 @@ public class Game {
                 }
                 switch(choice){
                     case 1 -> {
-                        System.out.println("Vilket djur vill du köpa?");
+                        System.out.println("Vilket djur vill du köpa?\n"+
+                                "Katt(1)\n"+
+                                "Hund(2)\n"+
+                                "Fågel(3)\n"+
+                                "Fisk(4)\n"+
+                                "Häst(5");
+                        animalType = scanInt.nextInt();
+                        new Store(animalType);
                         pointer.money-=100;
                         //pointer.playerOwnedAnimals.add(new animal);
                         //Animal doesent exist yet, so it does nothing.
