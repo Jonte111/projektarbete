@@ -42,17 +42,8 @@ public class Game {
                         animalType = scanInt.nextInt();
                         pointer.playerOwnedAnimals.add(store.createNewAnimal(animalType));
                         pointer.money-=100;
-                        //pointer.playerOwnedAnimals.add(new animal);
-                        //Animal doesent exist yet, so it does nothing.
-                        //new Store(animalType);
-                        //pointer.addAnimal(new Animal(animalType));
-                        //pointer.playerOwnedAnimals(Store(animalType));
-                       // pointer.playerOwnedAnimals.add((Object)new Store(animalType));
-                        //Probably need to upcast
-                        //Behöver inte skapa new stor, skapa create animal metod in store
-                        //Store.createNewAnimal(animalType);
+
                         System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
-                        //store.createNewAnimal(1);
                     }
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
