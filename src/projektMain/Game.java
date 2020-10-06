@@ -26,6 +26,9 @@ public class Game {
                         "Para djuren(4)");
                 int choice = scanInt.nextInt();
                 if(choice==1){
+                    System.out.println("Vilket djur vill du köpa?");
+                    pointer.money-=100;
+                    //pointer.playerOwnedAnimals.add(new animal);
 
                 }else if(choice==2){
                     System.out.println("Vad vill du sälja?");
