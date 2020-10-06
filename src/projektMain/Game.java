@@ -29,12 +29,15 @@ public class Game {
                     System.out.println("Vilket djur vill du köpa?");
                     pointer.money-=100;
                     //pointer.playerOwnedAnimals.add(new animal);
+                    System.out.println(pointer.money);
 
                 }else if(choice==2){
                     System.out.println("Vad vill du sälja?");
                     var animal = scanLine.nextLine();
                     pointer.money += 100;//temporary, will give player sold animal value
                     pointer.playerOwnedAnimals.remove(animal);
+                    System.out.println(pointer.money);
+
                 }else if(choice==3) {
 
                 }else if(choice==4){
