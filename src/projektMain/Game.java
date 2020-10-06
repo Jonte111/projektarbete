@@ -25,27 +25,32 @@ public class Game {
                         "Köpa foder(3)\n" +
                         "Para djuren(4)");
                 int choice = scanInt.nextInt();
-                if(choice==1){
-                    System.out.println("Vilket djur vill du köpa?");
-                    pointer.money-=100;
-                    //pointer.playerOwnedAnimals.add(new animal);
-                    //Animal doesent exist yet, so it does nothing.
-                    System.out.println(pointer.money);
+                while (choice<1 || choice>4){//Makes sure number is 1,2,3 or 4
+                    System.out.println("Du måste skriva 1,2,3 eller 4");
+                    choice=scanInt.nextInt();
+                }
+                switch(choice){
+                    case 1 -> {
+                        System.out.println("Vilket djur vill du köpa?");
+                        pointer.money-=100;
+                        //pointer.playerOwnedAnimals.add(new animal);
+                        //Animal doesent exist yet, so it does nothing.
+                        System.out.println(pointer.money);
+                    }
+                    case 2 -> {
+                        System.out.println("Vad vill du sälja?");
+                        var animal = scanLine.nextLine();
+                        pointer.money += 100;//temporary, will give player sold animal value
+                        pointer.playerOwnedAnimals.remove(animal);
+                        System.out.println(pointer.money);
+                    }
+                    case 3 -> {
 
-                }else if(choice==2){
-                    System.out.println("Vad vill du sälja?");
-                    var animal = scanLine.nextLine();
-                    pointer.money += 100;//temporary, will give player sold animal value
-                    pointer.playerOwnedAnimals.remove(animal);
-                    System.out.println(pointer.money);
+                    }
+                    case 4 -> {
 
-                }else if(choice==3) {
+                    }
 
-                }else if(choice==4){
-
-                }else{
-                    System.out.println("Du skrev något som inte fanns");
-                    continue;
                 }
 
             }
