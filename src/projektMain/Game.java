@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Game {
     ArrayList<Player> players = new ArrayList<Player>();
     public Game(int numberOfPlayers, int numberOfRounds){
-        Scanner scan = new Scanner(System.in);
+        Scanner scanInt = new Scanner(System.in);
+        Scanner scanLine = new Scanner(System.in);
         int playerNum = 1;
         while(numberOfPlayers > 0){
             players.add( new Player(playerNum, 1000, null));
@@ -23,11 +24,14 @@ public class Game {
                         "Sälja ett djur(2)\n" +
                         "Köpa foder(3)\n" +
                         "Para djuren(4)");
-                int choice = scan.nextInt();
+                int choice = scanInt.nextInt();
                 if(choice==1){
 
                 }else if(choice==2){
-
+                    System.out.println("Vad vill du sälja?");
+                    var animal = scanLine.nextLine();
+                    pointer.money += 100;//temporary, will give player sold animal value
+                    pointer.playerOwnedAnimals.remove(animal);
                 }else if(choice==3) {
 
                 }else if(choice==4){
