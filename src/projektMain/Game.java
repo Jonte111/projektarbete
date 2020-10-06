@@ -34,14 +34,14 @@ public class Game {
                         pointer.money-=100;
                         //pointer.playerOwnedAnimals.add(new animal);
                         //Animal doesent exist yet, so it does nothing.
-                        System.out.println(pointer.money);
+                        System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
                     }
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
                         var animal = scanLine.nextLine();
                         pointer.money += 100;//temporary, will give player sold animal value
                         pointer.playerOwnedAnimals.remove(animal);
-                        System.out.println(pointer.money);
+                        System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
                     }
                     case 3 -> {
 
