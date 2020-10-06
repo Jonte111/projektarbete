@@ -29,6 +29,7 @@ public class Game {
                     System.out.println("Vilket djur vill du köpa?");
                     pointer.money-=100;
                     //pointer.playerOwnedAnimals.add(new animal);
+                    //Animal doesent exist yet, so it does nothing.
                     System.out.println(pointer.money);
 
                 }else if(choice==2){
