@@ -20,14 +20,17 @@ public class Game {
                 System.out.println(pointer.name);
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
-                        "Köpa foder(2)\n" +
-                        "Para djuren(3)");
+                        "Sälja ett djur(2)\n" +
+                        "Köpa foder(3)\n" +
+                        "Para djuren(4)");
                 int choice = scan.nextInt();
                 if(choice==1){
 
                 }else if(choice==2){
 
-                }else if(choice==3){
+                }else if(choice==3) {
+
+                }else if(choice==4){
 
                 }else{
                     System.out.println("Du skrev något som inte fanns");
