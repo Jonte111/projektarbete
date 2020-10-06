@@ -10,7 +10,7 @@ public class Game {
         Scanner scanLine = new Scanner(System.in);
         int playerNum = 1;
         while(numberOfPlayers > 0){
-            players.add( new Player(playerNum, 1000, null));
+            players.add( new Player(playerNum, 1000, null, null));
             numberOfPlayers--;
             playerNum++;
         }
