@@ -13,7 +13,7 @@ public class Game {
         int animalType;
 
         while(numberOfPlayers > 0){
-            players.add( new Player(playerNum, 1000));
+            players.add( new Player(playerNum));
             numberOfPlayers--;
             playerNum++;
         }
