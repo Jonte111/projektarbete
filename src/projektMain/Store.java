@@ -1,5 +1,6 @@
 package projektMain;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 enum gender{
     MALE,
@@ -7,38 +8,58 @@ enum gender{
 }
 
 public class Store {
-
-    public Store(int animalType){
-        Scanner scanInt = new Scanner(System.in);
-        Scanner scanLine = new Scanner(System.in);
-
-        String name;
-        String gender;
-        switch(animalType){
-           case 1 ->{
-               System.out.println("Vad vill du döpa katten till?");
-               name=scanInt.nextLine();
-               System.out.println("Vilket kön? male famale");
-               gender = scanLine.nextLine().toUpperCase();
-               new Cat(name,gender);
-           }
-           case 2 ->{
-               new Dog();
-           }
-           case 3 ->{
-               new Bird();
-           }
-           case 4 ->{
-               new Fish();
-           }
-           case 5 ->{
-               new Horse();
-           }
-
+    public Store(){
+       // Scanner scanInt = new Scanner(System.in);
+       // Scanner scanLine = new Scanner(System.in);
+    }
+        /*
+        public Animal addAnimal(){
 
         }
 
+         */
+        /*
+        public Animal createAnimal(){
+        System.out.println("Vad vill du döpa katten till?");
+        name=scanInt.nextLine();
+        System.out.println("Vilket kön? male famale");
+        gender = scanLine.nextLine().toUpperCase();
+        new Cat(name,gender);
+        return this.Animal;
+        }
 
+         */
+
+        /*
+        public Animal createAnimal(animalType){
+            System.out.println("Vad vill du döpa katten till?");
+            name=scanInt.nextLine();
+            System.out.println("Vilket kön? male famale");
+            gender = scanLine.nextLine().toUpperCase();
+            return this.Animal;
+        }
+
+         */
+
+    public Animal createNewAnimal(int animalType) {
+        Scanner scanInt = new Scanner(System.in);
+        Scanner scanLine = new Scanner(System.in);
+        String[] animalTypeName = {"katten", "hunden", "fågeln",  "fisken", "hästen"};
+        System.out.println("Vad vill du döpa " + animalTypeName[animalType - 1] + "?");
+        String  name = scanInt.nextLine();
+        System.out.println("Vilket kön? male famale");
+        String gender = scanLine.nextLine().toUpperCase();
+        //int animalType= scanInt.nextInt();
+        Animal newAnimal = null;
+        switch(animalType) {
+            case 1 -> newAnimal = new Cat(name, gender);
+            case 2 -> newAnimal = new Cat(name, gender);
+            case 3 -> newAnimal = new Cat(name, gender);
+            case 4 -> newAnimal = new Cat(name, gender);
+            case 5 -> newAnimal = new Cat(name, gender);
+        }
+        return newAnimal;
     }
 
 }
+

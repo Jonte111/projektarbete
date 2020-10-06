@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Game {
     ArrayList<Player> players = new ArrayList<Player>();
+    Store store = new Store();
     public Game(int numberOfPlayers, int numberOfRounds){
         Scanner scanInt = new Scanner(System.in);
         Scanner scanLine = new Scanner(System.in);
@@ -12,14 +13,14 @@ public class Game {
         int animalType;
 
         while(numberOfPlayers > 0){
-            players.add( new Player(playerNum, 1000, null, null));
+            players.add( new Player(playerNum, 1000));
             numberOfPlayers--;
             playerNum++;
         }
         //Playing the rounds
         while(numberOfRounds > 0){
             for(var pointer: players){
-                System.out.println("Player"+pointer.name);
+                System.out.println("Player"+pointer.name + " äger " + pointer.playerOwnedAnimals);
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
                         "Sälja ett djur(2)\n" +
@@ -39,11 +40,19 @@ public class Game {
                                 "Fisk(4)\n"+
                                 "Häst(5");
                         animalType = scanInt.nextInt();
-                        new Store(animalType);
+                        pointer.playerOwnedAnimals.add(store.createNewAnimal(animalType));
                         pointer.money-=100;
                         //pointer.playerOwnedAnimals.add(new animal);
                         //Animal doesent exist yet, so it does nothing.
+                        //new Store(animalType);
+                        //pointer.addAnimal(new Animal(animalType));
+                        //pointer.playerOwnedAnimals(Store(animalType));
+                       // pointer.playerOwnedAnimals.add((Object)new Store(animalType));
+                        //Probably need to upcast
+                        //Behöver inte skapa new stor, skapa create animal metod in store
+                        //Store.createNewAnimal(animalType);
                         System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
+                        //store.createNewAnimal(1);
                     }
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
