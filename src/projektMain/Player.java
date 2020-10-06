@@ -18,7 +18,7 @@ public class Player {
         this.name = name;
         this.money = money;
         this.playerOwnedAnimals=playerOwnedAnimals;
-
+        this.playerOwnedFood=playerOwnedFood;
     }
 
 
