@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Game {
     ArrayList<Player> players = new ArrayList<Player>();
-    Store store = new Store();
+    Store store = new Store();//initialize store
     public Game(int numberOfPlayers, int numberOfRounds){
         Scanner scanInt = new Scanner(System.in);
         Scanner scanLine = new Scanner(System.in);
