@@ -19,18 +19,10 @@ public class Player {
 
     public void getOwnedAnimals() {
         for(var animalPointer: playerOwnedAnimals) {
-            System.out.println(animalPointer.name + animalPointer.getClass().getSimpleName() + animalPointer.gender + animalPointer.health);
+            System.out.println(animalPointer.name +" "
+                    + animalPointer.getClass().getSimpleName()+ " "
+                    + animalPointer.gender +" "+ animalPointer.health+ " health points\n");
         }
     }
 
-    /*
-        public void playerOwnedAnimals(Store store) {
-            playerOwnedAnimals.add(store);
-        }
-
-
-     */
-    public void addAnimal(Animal animal){
-        playerOwnedAnimals.add(animal);
-    }
 }

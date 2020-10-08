@@ -11,7 +11,6 @@ public class Game {
         Scanner scanLine = new Scanner(System.in);
         int playerNum = 1;
         int animalType;
-        int saveNumberOfPlayers = numberOfPlayers;
 
         while(numberOfPlayers > 0){
             players.add( new Player(playerNum, 1000));
@@ -21,7 +20,6 @@ public class Game {
         //Playing the rounds
         while(numberOfRounds > 0){
             int i = 0;
-            //testing with an for loop instead
             for(var pointer: players){
 /*
                 players.get(i).getOwnedAnimals();//Need an index, print out animals
@@ -30,9 +28,9 @@ public class Game {
                         pointer.playerOwnedAnimals);
 
  */
+
                 System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
                 players.get(i).getOwnedAnimals();//Need an index, print out animals
-
 
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
@@ -55,12 +53,10 @@ public class Game {
                         animalType = scanInt.nextInt();
                         var newAnimal = store.createNewAnimal(animalType);
                         pointer.playerOwnedAnimals.add(newAnimal);
-                        System.out.println("POINTERS PENGAR INNAN " + pointer.money);
                         pointer.money -= newAnimal.getPrice();
 
-                        System.out.println("VAD KOSTADE DJURET?" + newAnimal.getPrice());
-                        System.out.println("POINTERS PENGAR EFTER " + pointer.money);
-
+                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
+                        players.get(i).getOwnedAnimals();//Need an index, print out animals
                     }
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
