@@ -13,14 +13,20 @@ public class Game {
         int animalType;
 
         while(numberOfPlayers > 0){
+
             players.add( new Player(playerNum, 1000));
             numberOfPlayers--;
             playerNum++;
         }
         //Playing the rounds
         while(numberOfRounds > 0){
+           // System.out.println("\n");//make sout look better
+
             int i = 0;
             for(var pointer: players){
+                System.out.println("--------------------------------------");
+               // System.out.println("\n");//make sout look better
+
 /*
                 players.get(i).getOwnedAnimals();//Need an index, print out animals
 
@@ -31,6 +37,7 @@ public class Game {
 
                 System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
                 players.get(i).getOwnedAnimals();//Need an index, print out animals
+                //tested those two
 
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
@@ -57,6 +64,7 @@ public class Game {
 
                         System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
                         players.get(i).getOwnedAnimals();//Need an index, print out animals
+                        //tested those two
                     }
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
