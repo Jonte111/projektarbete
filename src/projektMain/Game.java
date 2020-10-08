@@ -11,6 +11,7 @@ public class Game {
         Scanner scanLine = new Scanner(System.in);
         int playerNum = 1;
         int animalType;
+        int saveNumberOfPlayers = numberOfPlayers;
 
         while(numberOfPlayers > 0){
             players.add( new Player(playerNum, 1000));
@@ -19,12 +20,19 @@ public class Game {
         }
         //Playing the rounds
         while(numberOfRounds > 0){
-            int thisPlayer=0;
+            int i = 0;
+            //testing with an for loop instead
             for(var pointer: players){
-                players.get(thisPlayer).getOwnedAnimals();//Need an index, print out animals
+/*
+                players.get(i).getOwnedAnimals();//Need an index, print out animals
 
-                System.out.println("Player"+pointer.name+ " har "+pointer.money+" kr " + "och äger "+
+                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger "+
                         pointer.playerOwnedAnimals);
+
+ */
+                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
+                players.get(i).getOwnedAnimals();//Need an index, print out animals
+
 
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
@@ -45,20 +53,13 @@ public class Game {
                                 "Fisk(4)\n"+
                                 "Häst(5");
                         animalType = scanInt.nextInt();
-                        pointer.playerOwnedAnimals.add(store.createNewAnimal(animalType));
-                        //pointer.money-=100;
+                        var newAnimal = store.createNewAnimal(animalType);
+                        pointer.playerOwnedAnimals.add(newAnimal);
+                        System.out.println("POINTERS PENGAR INNAN " + pointer.money);
+                        pointer.money -= newAnimal.getPrice();
 
-                        if(animalType==1){
-                            pointer.money-=100;
-                        }
-
-/*
-                       System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr" + "och äger "+
-                               pointer.playerOwnedAnimals);
-
-
- */
-
+                        System.out.println("VAD KOSTADE DJURET?" + newAnimal.getPrice());
+                        System.out.println("POINTERS PENGAR EFTER " + pointer.money);
 
                     }
                     case 2 -> {
@@ -78,8 +79,9 @@ public class Game {
                 }
                 //make for loop that prints out animals money food
                 //System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
-
+                i++; //counts up to get correct index on what player owns
             }
+            //i++; //counts up to get correct index on what player owns
 
             numberOfRounds--;
         }
