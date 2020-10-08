@@ -20,7 +20,7 @@ public class Game {
         //Playing the rounds
         while(numberOfRounds > 0){
             for(var pointer: players){
-                System.out.println("Player"+pointer.name + " äger " + pointer.playerOwnedAnimals);
+
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
                         "Sälja ett djur(2)\n" +
@@ -41,9 +41,20 @@ public class Game {
                                 "Häst(5");
                         animalType = scanInt.nextInt();
                         pointer.playerOwnedAnimals.add(store.createNewAnimal(animalType));
-                        pointer.money-=100;
+                        //pointer.money-=100;
 
-                        System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
+                        if(animalType==1){
+                            pointer.money-=100;
+                        }
+
+/*
+                       System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr" + "och äger "+
+                               pointer.playerOwnedAnimals);
+
+
+ */
+
+
                     }
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
@@ -60,7 +71,10 @@ public class Game {
                     }
 
                 }
-
+                //make for loop that prints out animals money food
+                //System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
+                System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr" + "och äger "+
+                        pointer.playerOwnedAnimals);
             }
 
             numberOfRounds--;

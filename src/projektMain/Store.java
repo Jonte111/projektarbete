@@ -8,7 +8,6 @@ enum gender{
 }
 
 public class Store {
-
     public Animal createNewAnimal(int animalType) {
         Scanner scanInt = new Scanner(System.in);
         Scanner scanLine = new Scanner(System.in);
@@ -21,12 +20,15 @@ public class Store {
         Animal newAnimal = null;
         switch(animalType) {
             case 1 -> newAnimal = new Cat(name, gender);
-           // Player.money -= CatPrice;
+            /*
             case 2 -> newAnimal = new Cat(name, gender);
             case 3 -> newAnimal = new Cat(name, gender);
             case 4 -> newAnimal = new Cat(name, gender);
             case 5 -> newAnimal = new Cat(name, gender);
+
+             */
         }
+        System.out.println(newAnimal);
         return newAnimal;
     }
 
