@@ -17,13 +17,19 @@ public class Player {
         this.money = money;
     }
 
-/*
-    public void playerOwnedAnimals(Store store) {
-        playerOwnedAnimals.add(store);
+    public void getOwnedAnimals() {
+        for(var animalPointer: playerOwnedAnimals) {
+            System.out.println(animalPointer.name+ animalPointer.getClass().getSimpleName() + animalPointer.gender + animalPointer.health);
+        }
     }
 
+    /*
+        public void playerOwnedAnimals(Store store) {
+            playerOwnedAnimals.add(store);
+        }
 
- */
+
+     */
     public void addAnimal(Animal animal){
         playerOwnedAnimals.add(animal);
     }

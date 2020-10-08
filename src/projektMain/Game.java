@@ -19,7 +19,12 @@ public class Game {
         }
         //Playing the rounds
         while(numberOfRounds > 0){
+            int thisPlayer=0;
             for(var pointer: players){
+                players.get(thisPlayer).getOwnedAnimals();//Need an index, print out animals
+
+                System.out.println("Player"+pointer.name+ " har "+pointer.money+" kr " + "och äger "+
+                        pointer.playerOwnedAnimals);
 
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
@@ -73,8 +78,7 @@ public class Game {
                 }
                 //make for loop that prints out animals money food
                 //System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
-                System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr" + "och äger "+
-                        pointer.playerOwnedAnimals);
+
             }
 
             numberOfRounds--;
