@@ -2,6 +2,7 @@ package projektMain;
 
 public abstract class Animal {
 
+    protected double price;
     protected String name;
     protected String gender;
     protected int health = 100;//Don't need that in the constructor
@@ -11,6 +12,10 @@ public abstract class Animal {
     public Animal(String name, String gender){
         this.name = name;
         this.gender = gender;
+    }
+
+    public double getPrice(){
+        return this.price;
     }
 
 }

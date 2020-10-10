@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Game {
     ArrayList<Player> players = new ArrayList<Player>();
-    Store store = new Store();
+    Store store = new Store();//initialize store
     public Game(int numberOfPlayers, int numberOfRounds){
         Scanner scanInt = new Scanner(System.in);
         Scanner scanLine = new Scanner(System.in);
@@ -13,14 +13,32 @@ public class Game {
         int animalType;
 
         while(numberOfPlayers > 0){
+
             players.add( new Player(playerNum, 1000));
             numberOfPlayers--;
             playerNum++;
         }
         //Playing the rounds
         while(numberOfRounds > 0){
+           // System.out.println("\n");//make sout look better
+
+            int i = 0;
             for(var pointer: players){
-                System.out.println("Player"+pointer.name + " äger " + pointer.playerOwnedAnimals);
+                System.out.println("--------------------------------------");
+               // System.out.println("\n");//make sout look better
+
+/*
+                players.get(i).getOwnedAnimals();//Need an index, print out animals
+
+                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger "+
+                        pointer.playerOwnedAnimals);
+
+ */
+
+                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
+                players.get(i).getOwnedAnimals();//Need an index, print out animals
+                //tested those two
+
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
                         "Sälja ett djur(2)\n" +
@@ -40,10 +58,13 @@ public class Game {
                                 "Fisk(4)\n"+
                                 "Häst(5");
                         animalType = scanInt.nextInt();
-                        pointer.playerOwnedAnimals.add(store.createNewAnimal(animalType));
-                        pointer.money-=100;
+                        var newAnimal = store.createNewAnimal(animalType);
+                        pointer.playerOwnedAnimals.add(newAnimal);
+                        pointer.money -= newAnimal.getPrice();
 
-                        System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
+                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
+                        players.get(i).getOwnedAnimals();//Need an index, print out animals
+                        //tested those two
                     }
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
@@ -60,8 +81,11 @@ public class Game {
                     }
 
                 }
-
+                //make for loop that prints out animals money food
+                //System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
+                i++; //counts up to get correct index on what player owns
             }
+            //i++; //counts up to get correct index on what player owns
 
             numberOfRounds--;
         }

@@ -12,25 +12,17 @@ public class Player {
     //You only need it in the constructor when it can change between new instances
     //Player always start with two empty arraylists.
 
-    //ArrayList<Animal> playerOwnedAnimals;
-    //Hashtable<String, Integer> food = new Hashtable<String, Integer>();
-    //, Hashtable<String, Integer>
-    //Player needs a ArrayList to store animals and food
-    //Hashtable<food, quantity>; HashMap<String food, int quantity>
-
     public Player(int name, double money) {
         this.name = name;
         this.money = money;
     }
 
-/*
-    public void playerOwnedAnimals(Store store) {
-        playerOwnedAnimals.add(store);
+    public void getOwnedAnimals() {
+        for(var animalPointer: playerOwnedAnimals) {
+            System.out.println(animalPointer.name +" "
+                    + animalPointer.getClass().getSimpleName()+ " "
+                    + animalPointer.gender +" "+ animalPointer.health+ " health points");
+        }
     }
 
-
- */
-    public void addAnimal(Animal animal){
-        playerOwnedAnimals.add(animal);
-    }
 }
