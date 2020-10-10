@@ -18,6 +18,7 @@ public class Player {
     }
 
     public void getOwnedAnimals() {
+
         for(var animalPointer: playerOwnedAnimals) {
             System.out.println(animalPointer.name +" "
                     + animalPointer.getClass().getSimpleName()+ " "

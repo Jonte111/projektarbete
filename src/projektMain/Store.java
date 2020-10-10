@@ -29,7 +29,7 @@ public class Store {
 
              */
         }
-        System.out.println(newAnimal);
+
         return newAnimal;
     }
 

@@ -37,7 +37,6 @@ public class Game {
 
                 System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
                 players.get(i).getOwnedAnimals();//Need an index, print out animals
-                //tested those two
 
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
@@ -64,7 +63,7 @@ public class Game {
 
                         System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
                         players.get(i).getOwnedAnimals();//Need an index, print out animals
-                        //tested those two
+
                     }
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
