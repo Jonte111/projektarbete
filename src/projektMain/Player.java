@@ -31,6 +31,17 @@ public class Player {
 
     }
     public double sellAnimal(String name){
+
+        for(var sA: playerOwnedAnimals){
+           if(sA.equals(name)){
+               playerOwnedAnimals.remove(name);
+               return 100;
+           }
+        }
+
+
+
+        /*
         if(!playerOwnedAnimals.contains(name)){
             System.out.println("Dosent exist");
         }else{
@@ -40,6 +51,8 @@ public class Player {
             }
 
         }
+
+         */
         return 0;
     }
 

@@ -69,7 +69,8 @@ public class Game {
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
                         var animal = scanLine.nextLine();
-                        pointer.sellAnimal(animal);
+                        pointer.money += pointer.sellAnimal(animal);
+
                         /*
                         pointer.money += 100;//temporary, will give player sold animal value
                         //pointer.playerOwnedAnimals.remove(animal);
