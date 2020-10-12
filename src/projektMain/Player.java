@@ -33,7 +33,7 @@ public class Player {
     public double sellAnimal(String name){
 
         for(var sA: playerOwnedAnimals){
-           if(sA.equals(name)){
+           if(sA.name.equals(name)){
                playerOwnedAnimals.remove(name);
                return 100;
            }
