@@ -34,8 +34,9 @@ public class Player {
 
         for(var sA: playerOwnedAnimals){
            if(sA.name.equals(name)){
-               playerOwnedAnimals.remove(name);
-               return 100;
+               double value = sA.health*100;
+               playerOwnedAnimals.remove(sA);
+               return value;
            }
         }
 
