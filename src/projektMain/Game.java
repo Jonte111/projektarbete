@@ -55,7 +55,7 @@ public class Game {
                                 "Hund(2)\n"+
                                 "Fågel(3)\n"+
                                 "Fisk(4)\n"+
-                                "Häst(5");
+                                "Häst(5)");
                         animalType = scanInt.nextInt();
                         var newAnimal = store.createNewAnimal(animalType);
                         pointer.playerOwnedAnimals.add(newAnimal);
