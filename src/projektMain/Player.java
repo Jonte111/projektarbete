@@ -18,12 +18,17 @@ public class Player {
     }
 
     public void getOwnedAnimals() {
+        if(playerOwnedAnimals.isEmpty()){
+            System.out.println("Inget");
 
-        for(var animalPointer: playerOwnedAnimals) {
-            System.out.println(animalPointer.name +" "
-                    + animalPointer.getClass().getSimpleName()+ " "
-                    + animalPointer.gender +" "+ animalPointer.health+ " health points");
+        }else{
+            for(var animalPointer: playerOwnedAnimals) {
+                System.out.println(animalPointer.name +" "
+                        + animalPointer.getClass().getSimpleName()+ " "
+                        + animalPointer.gender +" "+ animalPointer.health+ " health points");
+            }
         }
+
     }
 
 }
