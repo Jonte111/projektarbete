@@ -1,6 +1,5 @@
 package projektMain;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 enum gender{
     MALE,
@@ -29,5 +28,8 @@ public class Store {
         return newAnimal;
     }
 
+
+
 }
+
 

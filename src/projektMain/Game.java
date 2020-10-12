@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Game {
     ArrayList<Player> players = new ArrayList<Player>();
     Store store = new Store();//initialize store
+
     public Game(int numberOfPlayers, int numberOfRounds){
         Scanner scanInt = new Scanner(System.in);
         Scanner scanLine = new Scanner(System.in);
@@ -68,9 +69,14 @@ public class Game {
                     case 2 -> {
                         System.out.println("Vad vill du sälja?");
                         var animal = scanLine.nextLine();
+                        pointer.sellAnimal(animal);
+                        /*
                         pointer.money += 100;//temporary, will give player sold animal value
-                        pointer.playerOwnedAnimals.remove(animal);
-                        System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
+                        //pointer.playerOwnedAnimals.remove(animal);
+
+                         */
+                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
+                        players.get(i).getOwnedAnimals();//Need an index, print out animals
                     }
                     case 3 -> {
 

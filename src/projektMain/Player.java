@@ -30,5 +30,21 @@ public class Player {
         }
 
     }
+    public double sellAnimal(String name){
+        if(!playerOwnedAnimals.contains(name)){
+            System.out.println("Dosent exist");
+        }else{
+            if(playerOwnedAnimals.getClass().getSimpleName().equals("Cat")){
+                playerOwnedAnimals.remove(name);
+                return 100;
+            }
+
+        }
+        return 0;
+    }
+
+
+
+
 
 }
