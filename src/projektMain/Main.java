@@ -6,10 +6,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         //commandLineApp
-        System.out.println("How many players do you want?");
+        System.out.println("Hur många spelare? 1-4 spelare.");
         int numberOfPlayers = scan.nextInt();
-        System.out.println("How many rounds?");
+        while(numberOfPlayers<1 || numberOfPlayers>4){
+            System.out.println("Hur många spelare? 1-4 spelare.");
+            numberOfPlayers= scan.nextInt();
+        }
+        System.out.println("Hur många rundor? 5-30 rundor.");
         int numberOfRounds= scan.nextInt();
+        while(numberOfRounds<5 || numberOfRounds>30){
+            System.out.println("Hur många rundor? 5-30 rundor.");
+            numberOfRounds= scan.nextInt();
+        }
 
         switch(numberOfPlayers){
             case 1 -> {

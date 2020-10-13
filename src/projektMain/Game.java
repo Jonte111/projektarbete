@@ -14,15 +14,13 @@ public class Game {
         int animalType;
 
         while(numberOfPlayers > 0){
-
             players.add( new Player(playerNum, 1000));
             numberOfPlayers--;
             playerNum++;
         }
+
         //Playing the rounds
         while(numberOfRounds > 0){
-
-            //int i = 0;
             for(var pointer: players){
                 System.out.println("--------------------------------------");
                 //--------------------------
