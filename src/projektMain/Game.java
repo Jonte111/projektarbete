@@ -72,8 +72,10 @@ public class Game {
                                 "Köttätare(1) för katt, hund, fågel och fisk"+
                                 "Växtätare(2) för häst"+
                                 "Allätare(3) för hund, fågel och fisk");
-                        int food = scanInt.nextInt();
-                        //new Food(food);
+                        var foodType = scanInt.nextInt();
+                        var newFood = store.createNewFood(foodType);
+                        pointer.playerOwnedFood.add(newFood);
+                        pointer.money -= newFood.getPrice();
 
                     }
                     case 4 -> {

@@ -39,21 +39,6 @@ public class Player {
                return value;
            }
         }
-
-
-
-        /*
-        if(!playerOwnedAnimals.contains(name)){
-            System.out.println("Dosent exist");
-        }else{
-            if(playerOwnedAnimals.getClass().getSimpleName().equals("Cat")){
-                playerOwnedAnimals.remove(name);
-                return 100;
-            }
-
-        }
-
-         */
         return 0;
     }
 

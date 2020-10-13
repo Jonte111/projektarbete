@@ -5,4 +5,8 @@ public abstract class Food {
     public Food(){
 
     }
+    public double getPrice(){
+        return this.price;
+    }
+
 }
