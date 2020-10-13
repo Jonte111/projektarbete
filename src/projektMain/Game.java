@@ -28,14 +28,6 @@ public class Game {
                 System.out.println("--------------------------------------");
                // System.out.println("\n");//make sout look better
 
-/*
-                players.get(i).getOwnedAnimals();//Need an index, print out animals
-
-                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger "+
-                        pointer.playerOwnedAnimals);
-
- */
-
                 System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
                 players.get(i).getOwnedAnimals();//Need an index, print out animals
 
@@ -71,11 +63,6 @@ public class Game {
                         var animal = scanLine.nextLine();
                         pointer.money += pointer.sellAnimal(animal);
 
-                        /*
-                        pointer.money += 100;//temporary, will give player sold animal value
-                        //pointer.playerOwnedAnimals.remove(animal);
-
-                         */
                         System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
                         players.get(i).getOwnedAnimals();//Need an index, print out animals
                     }
