@@ -73,7 +73,7 @@ public class Game {
                                 "Växtätare(2) för häst"+
                                 "Allätare(3) för hund, fågel och fisk");
                         int food = scanInt.nextInt();
-                        new Food(food);
+                        //new Food(food);
 
                     }
                     case 4 -> {
