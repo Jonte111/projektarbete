@@ -27,7 +27,15 @@ public class Store {
 
         return newAnimal;
     }
+    public Food createNewFood(int foodType){
 
+        Food newFood = null;
+        switch(foodType){
+            case 1 -> newFood = new CarnivoreFood();
+            case 2 -> newFood = new HerbivoreFood();
+            case 3 -> newFood = new OmnivoreFood();
+        }
+    }
 
 
 }

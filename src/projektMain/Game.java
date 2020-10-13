@@ -68,6 +68,12 @@ public class Game {
                         players.get(i).getOwnedAnimals();//Need an index, print out animals
                     }
                     case 3 -> {
+                        System.out.println("Vilken typ av foder vill du köpa?"+
+                                "Köttätare(1) för katt, hund, fågel och fisk"+
+                                "Växtätare(2) för häst"+
+                                "Allätare(3) för hund, fågel och fisk");
+                        int food = scanInt.nextInt();
+                        new Food(food);
 
                     }
                     case 4 -> {
