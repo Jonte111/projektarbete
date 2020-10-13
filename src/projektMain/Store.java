@@ -37,6 +37,11 @@ public class Store {
             case 2 -> newFood = new HerbivoreFood(kg);
             case 3 -> newFood = new OmnivoreFood(kg);
         }
+        if(newFood==null) {
+            System.out.println("Den är null");
+        }else{
+            System.out.println(newFood.name);
+        }
         return newFood;
     }
 

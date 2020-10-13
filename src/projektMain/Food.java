@@ -8,7 +8,7 @@ public abstract class Food {
         this.kg = kg;
     }
     public double getPrice(){
-        return this.price;
+        return this.price * kg;
     }
     //public String getName(){ return this.name;}
 }

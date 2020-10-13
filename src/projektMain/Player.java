@@ -6,7 +6,7 @@ public class Player {
     public int name;
     public double money;
     public ArrayList<Animal> playerOwnedAnimals = new ArrayList<>();
-    public ArrayList<Food> playerOwnedFood = new ArrayList<Food>();
+    public ArrayList<Food> playerOwnedFood = new ArrayList<>();
 
     //The two arrays dont need to be in the constructor because they always are the same.
     //You only need it in the constructor when it can change between new instances
@@ -44,11 +44,10 @@ public class Player {
 
 
     public void getOwnedFood() {
-        if(playerOwnedAnimals.isEmpty()){
+        if(playerOwnedFood.isEmpty()){
             System.out.println("Ingen mat");
         }else{
             for(var foodPointer: playerOwnedFood){
-                System.out.println("Test om kommer hit");
                 System.out.println(foodPointer.name + " " + foodPointer.kg + " kg");
             }
         }

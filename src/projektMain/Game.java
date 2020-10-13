@@ -22,15 +22,15 @@ public class Game {
         //Playing the rounds
         while(numberOfRounds > 0){
 
-            int i = 0;
+            //int i = 0;
             for(var pointer: players){
                 System.out.println("--------------------------------------");
                 //--------------------------
                 System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
                         "följande djur");
-                players.get(i).getOwnedAnimals();
+                pointer.getOwnedAnimals();
                 System.out.println("och följande foder: ");
-                players.get(i).getOwnedFood();
+                pointer.getOwnedFood();
                 //-------------------------------------------
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
@@ -57,7 +57,7 @@ public class Game {
                         pointer.money -= newAnimal.getPrice();
 
                         System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
-                        players.get(i).getOwnedAnimals();//Need an index, print out animals
+                        pointer.getOwnedAnimals();//Need an index, print out animals
 
                     }
                     case 2 -> {
@@ -67,9 +67,9 @@ public class Game {
                         //-----------------------------------------
                         System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
                                 "följande djur");
-                        players.get(i).getOwnedAnimals();
+                        pointer.getOwnedAnimals();
                         System.out.println("och följande foder: ");
-                        players.get(i).getOwnedFood();
+                        pointer.getOwnedFood();
                         //--------------------------------------
                     }
                     case 3 -> {
@@ -79,14 +79,15 @@ public class Game {
                                 "Allätare(3) för hund, fågel och fisk");
                         var foodType = scanInt.nextInt();
                         var newFood = store.createNewFood(foodType); //sends type of food wanted
+                        System.out.println(newFood.name);
                         pointer.playerOwnedFood.add(newFood);
                         pointer.money -= newFood.getPrice();
                         //-----------------------------------
                         System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
                                 "följande djur");
-                        players.get(i).getOwnedAnimals();
+                        pointer.getOwnedAnimals();
                         System.out.println("och följande foder: ");
-                        players.get(i).getOwnedFood();
+                        pointer.getOwnedFood();
                         //-------------------------------------
 
                     }
@@ -100,7 +101,7 @@ public class Game {
                 }
                 //make for loop that prints out animals money food
                 //System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
-                i++; //counts up to get correct index on what player owns
+                //i++; //counts up to get correct index on what player owns
             }
             //i++; //counts up to get correct index on what player owns
 
