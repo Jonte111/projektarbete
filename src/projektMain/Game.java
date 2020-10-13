@@ -35,7 +35,8 @@ public class Game {
                         "Köpa ett djur(1)\n" +
                         "Sälja ett djur(2)\n" +
                         "Köpa foder(3)\n" +
-                        "Para djuren(4)");
+                        "Para djuren(4)\n" +
+                        "Föda djuren(5)");
                 int choice = scanInt.nextInt();
                 while (choice<1 || choice>4){//Makes sure number is 1,2,3 or 4
                     System.out.println("Du måste skriva 1,2,3 eller 4");
@@ -70,6 +71,9 @@ public class Game {
 
                     }
                     case 4 -> {
+
+                    }
+                    case 5 -> {
 
                     }
 
