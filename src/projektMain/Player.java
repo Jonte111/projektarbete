@@ -43,7 +43,14 @@ public class Player {
     }
 
 
-
-
-
+    public void getOwnedFood() {
+        if(playerOwnedAnimals.isEmpty()){
+            System.out.println("Ingen mat");
+        }else{
+            for(var foodPointer: playerOwnedFood){
+                System.out.println("Test om kommer hit");
+                System.out.println(foodPointer.name + " " + foodPointer.kg + " kg");
+            }
+        }
+    }
 }

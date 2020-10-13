@@ -21,16 +21,17 @@ public class Game {
         }
         //Playing the rounds
         while(numberOfRounds > 0){
-           // System.out.println("\n");//make sout look better
 
             int i = 0;
             for(var pointer: players){
                 System.out.println("--------------------------------------");
-               // System.out.println("\n");//make sout look better
-
-                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
-                players.get(i).getOwnedAnimals();//Need an index, print out animals
-
+                //--------------------------
+                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
+                        "följande djur");
+                players.get(i).getOwnedAnimals();
+                System.out.println("och följande foder: ");
+                players.get(i).getOwnedFood();
+                //-------------------------------------------
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
                         "Sälja ett djur(2)\n" +
@@ -63,19 +64,30 @@ public class Game {
                         System.out.println("Vad vill du sälja?");
                         var animal = scanLine.nextLine();
                         pointer.money += pointer.sellAnimal(animal);
-
-                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
-                        players.get(i).getOwnedAnimals();//Need an index, print out animals
+                        //-----------------------------------------
+                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
+                                "följande djur");
+                        players.get(i).getOwnedAnimals();
+                        System.out.println("och följande foder: ");
+                        players.get(i).getOwnedFood();
+                        //--------------------------------------
                     }
                     case 3 -> {
-                        System.out.println("Vilken typ av foder vill du köpa?"+
-                                "Köttätare(1) för katt, hund, fågel och fisk"+
-                                "Växtätare(2) för häst"+
+                        System.out.println("Vilken typ av foder vill du köpa?\n"+
+                                "Köttätare(1) för katt, hund, fågel och fisk\n"+
+                                "Växtätare(2) för häst\n"+
                                 "Allätare(3) för hund, fågel och fisk");
                         var foodType = scanInt.nextInt();
-                        var newFood = store.createNewFood(foodType);
+                        var newFood = store.createNewFood(foodType); //sends type of food wanted
                         pointer.playerOwnedFood.add(newFood);
                         pointer.money -= newFood.getPrice();
+                        //-----------------------------------
+                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
+                                "följande djur");
+                        players.get(i).getOwnedAnimals();
+                        System.out.println("och följande foder: ");
+                        players.get(i).getOwnedFood();
+                        //-------------------------------------
 
                     }
                     case 4 -> {

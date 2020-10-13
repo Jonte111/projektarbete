@@ -1,7 +1,10 @@
 package projektMain;
 
 public class HerbivoreFood extends Food{
-    public HerbivoreFood(){
+    public HerbivoreFood(double kg){
+        super(kg);
         price=5;
+        name ="Herbivore food";
+
     }
 }

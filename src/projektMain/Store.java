@@ -28,12 +28,14 @@ public class Store {
         return newAnimal;
     }
     public Food createNewFood(int foodType){
-
+        Scanner scanDouble = new Scanner(System.in);
+        System.out.println("Hur många kg mat vill du köpa?");
+        double kg = scanDouble.nextDouble();
         Food newFood = null;
         switch(foodType){
-            case 1 -> newFood = new CarnivoreFood();
-            case 2 -> newFood = new HerbivoreFood();
-            case 3 -> newFood = new OmnivoreFood();
+            case 1 -> newFood = new CarnivoreFood(kg);
+            case 2 -> newFood = new HerbivoreFood(kg);
+            case 3 -> newFood = new OmnivoreFood(kg);
         }
         return newFood;
     }
