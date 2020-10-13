@@ -30,7 +30,7 @@ public class Game {
                 System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
                         "följande djur");
                 pointer.getOwnedAnimals();
-                System.out.println("och följande foder: ");
+                System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
                 pointer.getOwnedFood();
                 //-------------------------------------------
                 System.out.println("Vad vill du göra?:\n" +
@@ -65,8 +65,13 @@ public class Game {
                                     System.out.println("No money!");
                                 }
 
-                            System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
-                            pointer.getOwnedAnimals();//Need an index, print out animals
+                            //-----------------------------------
+                            System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
+                                    "följande djur");
+                            pointer.getOwnedAnimals();
+                            System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
+                            pointer.getOwnedFood();
+                            //-------------------------------------
                             System.out.println("Vill du fortsätta köpa djur? tryck 1 annars 0");
                             caseOneChoise=scanInt.nextInt();
                         }
@@ -83,7 +88,7 @@ public class Game {
                                 System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
                                         "följande djur");
                                 pointer.getOwnedAnimals();
-                                System.out.println("och följande foder: ");
+                                System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
                                 pointer.getOwnedFood();
                                 //--------------------------------------
                                 System.out.println("Vill du sälja fler djur (1) annars (0)");
@@ -114,7 +119,7 @@ public class Game {
                             System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
                                     "följande djur");
                             pointer.getOwnedAnimals();
-                            System.out.println("och följande foder: ");
+                            System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
                             pointer.getOwnedFood();
                             //-------------------------------------
                             System.out.println("Vill du köpa mer mat?(1) eller (0) för att sluta");
