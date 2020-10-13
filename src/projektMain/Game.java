@@ -12,9 +12,12 @@ public class Game {
         Scanner scanLine = new Scanner(System.in);
         int playerNum = 1;
         int animalType;
+        int caseOneChoise=1;
+        int caseTwoChoice=1;
+        int caseThreeChoice=1;
 
         while(numberOfPlayers > 0){
-            players.add( new Player(playerNum, 1000));
+            players.add( new Player(playerNum, 10));
             numberOfPlayers--;
             playerNum++;
         }
@@ -43,50 +46,80 @@ public class Game {
                 }
                 switch(choice){
                     case 1 -> {
-                        System.out.println("Vilket djur vill du köpa?\n"+
-                                "Katt(1)\n"+
-                                "Hund(2)\n"+
-                                "Fågel(3)\n"+
-                                "Fisk(4)\n"+
-                                "Häst(5)");
-                        animalType = scanInt.nextInt();
-                        var newAnimal = store.createNewAnimal(animalType);
-                        pointer.playerOwnedAnimals.add(newAnimal);
-                        pointer.money -= newAnimal.getPrice();
+                        caseOneChoise=1;
+                        while(caseOneChoise==1){
 
-                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
-                        pointer.getOwnedAnimals();//Need an index, print out animals
+                            System.out.println("Vilket djur vill du köpa?\n"+
+                                    "Katt(1)\n"+
+                                    "Hund(2)\n"+
+                                    "Fågel(3)\n"+
+                                    "Fisk(4)\n"+
+                                    "Häst(5)");
+                            animalType = scanInt.nextInt();
+                            var newAnimal = store.createNewAnimal(animalType);
+                                if(pointer.money> newAnimal.getPrice()){
+                                    pointer.playerOwnedAnimals.add(newAnimal);
+                                    pointer.money -= newAnimal.getPrice();
+
+                                }else{
+                                    System.out.println("No money!");
+                                }
+
+                            System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger ");
+                            pointer.getOwnedAnimals();//Need an index, print out animals
+                            System.out.println("Vill du fortsätta köpa djur? tryck 1 annars 0");
+                            caseOneChoise=scanInt.nextInt();
+                        }
 
                     }
                     case 2 -> {
-                        System.out.println("Vad vill du sälja?");
-                        var animal = scanLine.nextLine();
-                        pointer.money += pointer.sellAnimal(animal);
-                        //-----------------------------------------
-                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
-                                "följande djur");
-                        pointer.getOwnedAnimals();
-                        System.out.println("och följande foder: ");
-                        pointer.getOwnedFood();
-                        //--------------------------------------
+                        caseTwoChoice=1;
+                        while(caseTwoChoice==1){
+                            if(!pointer.playerOwnedAnimals.isEmpty()){
+                                System.out.println("Vad vill du sälja?");
+                                var animal = scanLine.nextLine();
+                                pointer.money += pointer.sellAnimal(animal);
+                                //-----------------------------------------
+                                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
+                                        "följande djur");
+                                pointer.getOwnedAnimals();
+                                System.out.println("och följande foder: ");
+                                pointer.getOwnedFood();
+                                //--------------------------------------
+                                System.out.println("Vill du sälja fler djur (1) annars (0)");
+                                caseTwoChoice=scanInt.nextInt();
+                            }else{
+                                System.out.println("Du har inget att sälja");
+                            }
+
+                        }
                     }
                     case 3 -> {
-                        System.out.println("Vilken typ av foder vill du köpa?\n"+
-                                "Köttätare(1) för katt, hund, fågel och fisk\n"+
-                                "Växtätare(2) för häst\n"+
-                                "Allätare(3) för hund, fågel och fisk");
-                        var foodType = scanInt.nextInt();
-                        var newFood = store.createNewFood(foodType); //sends type of food wanted
-                        System.out.println(newFood.name);
-                        pointer.playerOwnedFood.add(newFood);
-                        pointer.money -= newFood.getPrice();
-                        //-----------------------------------
-                        System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
-                                "följande djur");
-                        pointer.getOwnedAnimals();
-                        System.out.println("och följande foder: ");
-                        pointer.getOwnedFood();
-                        //-------------------------------------
+                        caseThreeChoice=1;
+                        while(caseThreeChoice ==1){
+                            System.out.println("Vilken typ av foder vill du köpa?\n"+
+                                    "Köttätare(1) för katt, hund, fågel och fisk\n"+
+                                    "Växtätare(2) för häst\n"+
+                                    "Allätare(3) för hund, fågel och fisk");
+                            var foodType = scanInt.nextInt();
+                            var newFood = store.createNewFood(foodType); //sends type of food wanted
+                                if(pointer.money>= newFood.getPrice()){
+                                    pointer.playerOwnedFood.add(newFood);
+                                    pointer.money -= newFood.getPrice();
+                                }else{
+                                    System.out.println("NEED MORE MINERALS");
+                                }
+
+                            //-----------------------------------
+                            System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
+                                    "följande djur");
+                            pointer.getOwnedAnimals();
+                            System.out.println("och följande foder: ");
+                            pointer.getOwnedFood();
+                            //-------------------------------------
+                            System.out.println("Vill du köpa mer mat?(1) eller (0) för att sluta");
+                            caseThreeChoice= scanInt.nextInt();
+                        }
 
                     }
                     case 4 -> {

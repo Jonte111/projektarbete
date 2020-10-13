@@ -2,7 +2,7 @@ package projektMain;
 
 public abstract class Animal {
 
-    protected double price;
+    public double price;
     protected String name;
     protected String gender;
     protected double health = 1;//Don't need that in the constructor
