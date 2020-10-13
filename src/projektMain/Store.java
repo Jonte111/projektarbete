@@ -35,6 +35,7 @@ public class Store {
             case 2 -> newFood = new HerbivoreFood();
             case 3 -> newFood = new OmnivoreFood();
         }
+        return newFood;
     }
 
 
