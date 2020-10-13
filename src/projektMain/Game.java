@@ -17,7 +17,7 @@ public class Game {
         int caseThreeChoice=1;
 
         while(numberOfPlayers > 0){
-            players.add( new Player(playerNum, 10));
+            players.add( new Player(playerNum, 1000));
             numberOfPlayers--;
             playerNum++;
         }
@@ -40,7 +40,7 @@ public class Game {
                         "Para djuren(4)\n" +
                         "Föda djuren(5)");
                 int choice = scanInt.nextInt();
-                while (choice<1 || choice>4){//Makes sure number is 1,2,3 or 4
+                while (choice<1 || choice>5){//Makes sure number is 1,2,3 or 4
                     System.out.println("Du måste skriva 1,2,3 eller 4");
                     choice=scanInt.nextInt();
                 }
@@ -126,6 +126,9 @@ public class Game {
 
                     }
                     case 5 -> {
+                        System.out.println("Who do you want to feed?");
+                        var animal = scanLine.nextLine();
+                        pointer.feedAnimal(animal);
 
                     }
 
