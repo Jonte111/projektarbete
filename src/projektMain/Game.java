@@ -164,12 +164,8 @@ public class Game {
                     }
 
                 }
-                //make for loop that prints out animals money food
-                //System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
-                //i++; //counts up to get correct index on what player owns
                 pointer.playerAnimalsAge();
             }
-            //i++; //counts up to get correct index on what player owns
 
             numberOfRounds--;
         }
