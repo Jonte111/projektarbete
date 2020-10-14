@@ -15,6 +15,7 @@ public class Game {
         int caseOneChoise=1;
         int caseTwoChoice=1;
         int caseThreeChoice=1;
+        int caseFiveChoice;
 
         while(numberOfPlayers > 0){
             players.add( new Player(playerNum, 1000));
@@ -131,9 +132,14 @@ public class Game {
 
                     }
                     case 5 -> {
-                        System.out.println("Who do you want to feed?");
-                        var animal = scanLine.nextLine();
-                        pointer.feedAnimal(animal);
+                        do{
+                            System.out.println("Vem vill du ge mat till?");
+                            var animal = scanLine.nextLine();
+                            pointer.feedAnimal(animal);
+                            System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
+                            caseFiveChoice=scanInt.nextInt();
+                        }while(caseFiveChoice==1);
+
 
                     }
 
