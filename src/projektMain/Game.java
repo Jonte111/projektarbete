@@ -132,12 +132,13 @@ public class Game {
 
                     }
                     case 5 -> {
+                        caseFiveChoice=1;
                         pointer.removeCheats();
 
                         if(!pointer.playerOwnedFood.isEmpty()){
                             pointer.removeCheats();
-                            do{
-                                pointer.removeCheats();
+                            while(caseFiveChoice==1&&!pointer.playerOwnedFood.isEmpty()){
+                                //pointer.removeCheats();
                                 pointer.getOwnedAnimals();
                                 System.out.println("Vem vill du ge mat till?");
                                 var animal = scanLine.nextLine();
@@ -152,8 +153,8 @@ public class Game {
                                 //-------------------------------------
                                 System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
                                 caseFiveChoice=scanInt.nextInt();
-
-                            }while(caseFiveChoice==1&&!pointer.playerOwnedFood.isEmpty());
+                                //pointer.removeCheats();
+                            }
                         }else{
                             System.out.println("Du har inget att mata med.");
                         }
