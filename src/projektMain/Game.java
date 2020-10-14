@@ -136,8 +136,17 @@ public class Game {
                             System.out.println("Vem vill du ge mat till?");
                             var animal = scanLine.nextLine();
                             pointer.feedAnimal(animal);
+
+                            //-----------------------------------
+                            System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
+                                    "följande djur");
+                            pointer.getOwnedAnimals();
+                            System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
+                            pointer.getOwnedFood();
+                            //-------------------------------------
                             System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
                             caseFiveChoice=scanInt.nextInt();
+
                         }while(caseFiveChoice==1);
 
 
