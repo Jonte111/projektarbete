@@ -1,6 +1,7 @@
 package projektMain;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
@@ -9,6 +10,7 @@ public class Player {
     public ArrayList<Animal> playerOwnedAnimals = new ArrayList<>();
     public ArrayList<Food> playerOwnedFood = new ArrayList<>();
     Scanner scanLine = new Scanner(System.in);
+    Random rand = new Random();
 
     //The two arrays dont need to be in the constructor because they always are the same.
     //You only need it in the constructor when it can change between new instances
@@ -118,6 +120,14 @@ public class Player {
             if(cheater.kg<= 0){
                 playerOwnedFood.remove(cheater);
             }
+        }
+    }
+
+    public void playerAnimalsAge() {
+        for(var getOlder: playerOwnedAnimals){
+            double randomHealth = 0.1 + (int)(Math.random() * ((0.3 - 0.1) + 1));
+
+            getOlder.health=getOlder.health-randomHealth;
         }
     }
 }

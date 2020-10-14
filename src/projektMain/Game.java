@@ -135,7 +135,9 @@ public class Game {
                         pointer.removeCheats();
 
                         if(!pointer.playerOwnedFood.isEmpty()){
+                            pointer.removeCheats();
                             do{
+                                pointer.removeCheats();
                                 pointer.getOwnedAnimals();
                                 System.out.println("Vem vill du ge mat till?");
                                 var animal = scanLine.nextLine();
@@ -151,7 +153,7 @@ public class Game {
                                 System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
                                 caseFiveChoice=scanInt.nextInt();
 
-                            }while(caseFiveChoice==1);
+                            }while(caseFiveChoice==1&&!pointer.playerOwnedFood.isEmpty());
                         }else{
                             System.out.println("Du har inget att mata med.");
                         }
@@ -162,6 +164,7 @@ public class Game {
                 //make for loop that prints out animals money food
                 //System.out.println("Player"+pointer.name+ " har "+pointer.money+"kr");
                 //i++; //counts up to get correct index on what player owns
+                pointer.playerAnimalsAge();
             }
             //i++; //counts up to get correct index on what player owns
 
