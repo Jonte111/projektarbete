@@ -116,6 +116,10 @@ public class Player {
     }
 
     public void removeCheats() {
+        playerOwnedFood.removeIf(cheater -> cheater.kg <= 0);
+    }
+    /*
+    public void removeCheats() {
         for(var cheater: playerOwnedFood){
             if(cheater.kg<= 0){
                 playerOwnedFood.remove(cheater);
@@ -123,6 +127,7 @@ public class Player {
         }
     }
 
+     */
     public void playerAnimalsAge() {
         for(var getOlder: playerOwnedAnimals){
             double randomHealth = 0.1 + (int)(Math.random() * ((0.3 - 0.1) + 1));

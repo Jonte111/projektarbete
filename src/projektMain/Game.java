@@ -125,6 +125,8 @@ public class Game {
                             //-------------------------------------
                             System.out.println("Vill du köpa mer mat?(1) eller (0) för att sluta");
                             caseThreeChoice= scanInt.nextInt();
+                            pointer.removeCheats();
+
                         }
 
                     }
@@ -133,7 +135,7 @@ public class Game {
                     }
                     case 5 -> {
                         caseFiveChoice=1;
-                        pointer.removeCheats();
+                        //pointer.removeCheats();
 
                         if(!pointer.playerOwnedFood.isEmpty()){
                             pointer.removeCheats();
