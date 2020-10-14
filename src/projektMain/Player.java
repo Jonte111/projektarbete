@@ -112,4 +112,12 @@ public class Player {
             }
         }
     }
+
+    public void removeCheats() {
+        for(var cheater: playerOwnedFood){
+            if(cheater.kg<= 0){
+                playerOwnedFood.remove(cheater);
+            }
+        }
+    }
 }

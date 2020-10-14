@@ -132,23 +132,28 @@ public class Game {
 
                     }
                     case 5 -> {
-                        do{
-                            System.out.println("Vem vill du ge mat till?");
-                            var animal = scanLine.nextLine();
-                            pointer.feedAnimal(animal);
+                        pointer.removeCheats();
 
-                            //-----------------------------------
-                            System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
-                                    "följande djur");
-                            pointer.getOwnedAnimals();
-                            System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
-                            pointer.getOwnedFood();
-                            //-------------------------------------
-                            System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
-                            caseFiveChoice=scanInt.nextInt();
+                        if(!pointer.playerOwnedFood.isEmpty()){
+                            do{
+                                System.out.println("Vem vill du ge mat till?");
+                                var animal = scanLine.nextLine();
+                                pointer.feedAnimal(animal);
 
-                        }while(caseFiveChoice==1);
+                                //-----------------------------------
+                                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
+                                        "följande djur");
+                                pointer.getOwnedAnimals();
+                                System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
+                                pointer.getOwnedFood();
+                                //-------------------------------------
+                                System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
+                                caseFiveChoice=scanInt.nextInt();
 
+                            }while(caseFiveChoice==1);
+                        }else{
+                            System.out.println("Du har inget att mata med.");
+                        }
 
                     }
 
