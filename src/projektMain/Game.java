@@ -136,6 +136,7 @@ public class Game {
 
                         if(!pointer.playerOwnedFood.isEmpty()){
                             do{
+                                pointer.getOwnedAnimals();
                                 System.out.println("Vem vill du ge mat till?");
                                 var animal = scanLine.nextLine();
                                 pointer.feedAnimal(animal);
