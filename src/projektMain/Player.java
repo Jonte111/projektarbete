@@ -30,7 +30,7 @@ public class Player {
             for(var animalPointer: playerOwnedAnimals) {
                 System.out.println(animalPointer.name +" "
                         + animalPointer.getClass().getSimpleName()+ " "
-                        + animalPointer.gender +" "+ animalPointer.health+ " health points");
+                        + animalPointer.gender +" "+ (Math.round(animalPointer.health*100)/100.0) + " health points");
             }
         }
 
@@ -132,7 +132,7 @@ public class Player {
     public void playerAnimalsAgeAndDie() {
         for(var getOlder: playerOwnedAnimals){
             // Create a random number between 0.10 - 0.30, with max two decimals
-            var randomHealth = Math.round(Math.random() * 20 + 10) / 100.0;
+            var randomHealth = (Math.random() * 20 + 10) / 100.0;
             getOlder.health-=randomHealth;
             if(getOlder.health <= 0){
                 playerOwnedAnimals.remove(getOlder);
