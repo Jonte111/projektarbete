@@ -144,6 +144,8 @@ public class Game {
                             }
                             else if(animal==0){
                                 mated=true;
+                            }else if(animal==6){
+                                System.out.println("Du försökte para något som inte går, försök igen");
                             }else{
                                 System.out.println("Something went wrong, try again");
                             }
