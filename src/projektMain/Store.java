@@ -15,7 +15,10 @@ public class Store {
         String name = scanInt.nextLine();
         System.out.println("Vilket kön? male or female");
         String gender = scanLine.nextLine().toUpperCase();
-        //int animalType= scanInt.nextInt();
+        while (!gender.equals("MALE")||!gender.equals("FEMALE")){
+            System.out.println("Vilket kön? male or female");
+            gender = scanLine.nextLine().toUpperCase();
+        }
         Animal newAnimal = null;
         switch(animalType) {
             case 1 -> newAnimal = new Cat(name, gender);
