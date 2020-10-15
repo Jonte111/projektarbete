@@ -150,7 +150,7 @@ public class Player {
                         if(animalOne.getClass().equals(animalTwo.getClass())&&
                                 !animalOne.gender.equals(animalTwo.gender)){
                             int offSpring = rand.nextInt(2);
-                            if(offSpring==1){
+                            if(offSpring==1){// try with return and then add it in case
                                 var animalType = animalOne.getClass().getSimpleName();
                                 if(animalType.equals("Cat")){
                                     playerOwnedAnimals.add(store.createNewAnimal(1));
@@ -162,6 +162,8 @@ public class Player {
                                     playerOwnedAnimals.add(store.createNewAnimal(4));
                                 }else if(animalType.equals("Horse")){
                                     playerOwnedAnimals.add(store.createNewAnimal(5));
+                                }else{
+                                    System.out.println("something went wrong");
                                 }
 
                             }else{
