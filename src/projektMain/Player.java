@@ -145,7 +145,6 @@ public class Player {
                 "Första djuret:");
         //-----------------------------------
         getOwnedAnimals();
-        System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
         //-------------------------------------
         String firstAnimal = scanLine.nextLine();
         System.out.println("Andra djuret:");
@@ -156,8 +155,10 @@ public class Player {
                     if(animalTwo.name.equals(secondAnimal)){
                         if(animalOne.getClass().equals(animalTwo.getClass())&&
                                 !animalOne.gender.equals(animalTwo.gender)){
+
                             int offSpring = rand.nextInt(2);
                             if(offSpring==1){// try with return and then add it in case
+                                System.out.println("Grattis det blev en avkomma");
                                 var animalType = animalOne.getClass().getSimpleName();
                                 if(animalType.equals("Cat")){
                                     return 1;
@@ -182,8 +183,9 @@ public class Player {
 
                             }else{
                                 System.out.println("Inga djur från parningen");
+                                return 0;
                             }
-
+                            //return true;
                         }
 
 

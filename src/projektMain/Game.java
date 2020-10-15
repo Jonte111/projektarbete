@@ -132,11 +132,22 @@ public class Game {
                     }
                     case 4 -> {
                         boolean mated = false;
-                        while(!mated){
-                            int animal = pointer.mateAnimal();
-                            pointer.playerOwnedAnimals.add(store.createNewAnimal(animal));
+                        int numberAnimals=0;
+                        for( var animal: pointer.playerOwnedAnimals){
+                            numberAnimals++;
                         }
-
+                        while(!mated&&numberAnimals<2){
+                            int animal = pointer.mateAnimal();
+                            if(animal >0 && animal <= 5) {
+                                pointer.playerOwnedAnimals.add(store.createNewAnimal(animal));
+                                mated = true;
+                            }
+                            else if(animal==0){
+                                mated=true;
+                            }else{
+                                System.out.println("Something went wrong, try again");
+                            }
+                        }
                     }
                     case 5 -> {
                         caseFiveChoice=1;
