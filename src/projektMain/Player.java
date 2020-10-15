@@ -137,7 +137,7 @@ public class Player {
         }
     }
 
-    public void mateAnimal() {
+    public int mateAnimal() {
         System.out.println("Vilka djur vill du para? Måste vara olika djurtyper och olika kön\n" +
                 "Första djuret:");
         String firstAnimal = scanLine.nextLine();
@@ -153,17 +153,24 @@ public class Player {
                             if(offSpring==1){// try with return and then add it in case
                                 var animalType = animalOne.getClass().getSimpleName();
                                 if(animalType.equals("Cat")){
-                                    playerOwnedAnimals.add(store.createNewAnimal(1));
+                                    return 1;
+                                    //playerOwnedAnimals.add(store.createNewAnimal(1));
                                 }else if(animalType.equals("Dog")){
-                                    playerOwnedAnimals.add(store.createNewAnimal(2));
+                                    return 2;
+                                    //playerOwnedAnimals.add(store.createNewAnimal(2));
                                 }else if(animalType.equals("Bird")){
-                                    playerOwnedAnimals.add(store.createNewAnimal(3));
+                                    return 3;
+                                    //playerOwnedAnimals.add(store.createNewAnimal(3));
                                 }else if(animalType.equals("Fish")){
-                                    playerOwnedAnimals.add(store.createNewAnimal(4));
+                                    return 4;
+                                   // playerOwnedAnimals.add(store.createNewAnimal(4));
                                 }else if(animalType.equals("Horse")){
-                                    playerOwnedAnimals.add(store.createNewAnimal(5));
+                                    return 5;
+                                   // playerOwnedAnimals.add(store.createNewAnimal(5));
                                 }else{
                                     System.out.println("something went wrong");
+
+                                    return 0;
                                 }
 
                             }else{
@@ -177,5 +184,6 @@ public class Player {
                 }
             }
         }
+        return 0;
     }
 }

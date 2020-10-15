@@ -133,8 +133,8 @@ public class Game {
                     case 4 -> {
                         boolean mated = false;
                         while(!mated){
-                            pointer.mateAnimal();
-
+                            int animal = pointer.mateAnimal();
+                            pointer.playerOwnedAnimals.add(store.createNewAnimal(animal));
                         }
 
                     }
