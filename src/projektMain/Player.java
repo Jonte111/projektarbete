@@ -129,17 +129,24 @@ public class Player {
     }
 
      */
-    public void playerAnimalsAge() {
+    public void playerAnimalsAgeAndDie() {
         for(var getOlder: playerOwnedAnimals){
             // Create a random number between 0.10 - 0.30, with max two decimals
             var randomHealth = Math.round(Math.random() * 20 + 10) / 100.0;
             getOlder.health-=randomHealth;
+            if(getOlder.health <= 0){
+                playerOwnedAnimals.remove(getOlder);
+            }
         }
     }
 
     public int mateAnimal() {
-        System.out.println("Vilka djur vill du para? Måste vara olika djurtyper och olika kön\n" +
+        System.out.println("Vilka djur vill du para? Måste vara samma djurtyper och olika kön\n" +
                 "Första djuret:");
+        //-----------------------------------
+        getOwnedAnimals();
+        System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
+        //-------------------------------------
         String firstAnimal = scanLine.nextLine();
         System.out.println("Andra djuret:");
         String secondAnimal = scanLine.nextLine();

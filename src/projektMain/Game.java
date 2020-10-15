@@ -169,7 +169,7 @@ public class Game {
                     }
 
                 }
-                pointer.playerAnimalsAge();
+                pointer.playerAnimalsAgeAndDie();
             }
 
             numberOfRounds--;
