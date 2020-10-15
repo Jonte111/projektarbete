@@ -130,9 +130,9 @@ public class Player {
      */
     public void playerAnimalsAge() {
         for(var getOlder: playerOwnedAnimals){
-            double randomHealth = 0.1 + (int)(Math.random() * ((0.3 - 0.1) + 1));
-
-            getOlder.health=getOlder.health-randomHealth;
+            // Create a random number between 0.10 - 0.30, with max two decimals
+            var randomHealth = Math.round(Math.random() * 20 + 10) / 100.0;
+            getOlder.health-=randomHealth;
         }
     }
 
