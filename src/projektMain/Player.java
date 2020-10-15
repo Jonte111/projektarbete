@@ -147,7 +147,8 @@ public class Player {
             if(animalOne.name.equals(firstAnimal)){
                 for(var animalTwo : playerOwnedAnimals){
                     if(animalTwo.name.equals(secondAnimal)){
-                        if(animalOne.getClass().equals(animalTwo.getClass())){
+                        if(animalOne.getClass().equals(animalTwo.getClass())&&
+                                !animalOne.gender.equals(animalTwo.gender)){
                             int offSpring = rand.nextInt(2);
                             if(offSpring==1){
                                 var animalType = animalOne.getClass().getSimpleName();
