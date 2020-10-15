@@ -142,6 +142,11 @@ public class Player {
 
             */
         }
+        for(int i = playerOwnedAnimals.size()-1; i >=0; i--){
+            if(playerOwnedAnimals.get(i).health<= 0){
+                playerOwnedAnimals.remove(i);
+            }
+        }
     }
 
     public int mateAnimal() {
