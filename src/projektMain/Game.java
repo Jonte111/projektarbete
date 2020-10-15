@@ -189,6 +189,9 @@ public class Game {
 
             numberOfRounds--;
         }
+        for(Player player : players){
+            store.sellEverything(player);
+        }
 
 
 

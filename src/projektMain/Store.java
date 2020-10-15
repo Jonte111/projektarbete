@@ -46,6 +46,11 @@ public class Store {
     }
 
 
+    public void sellEverything(Player player) {
+        for(Animal animal : player.playerOwnedAnimals){
+
+        }
+    }
 }
 
 
