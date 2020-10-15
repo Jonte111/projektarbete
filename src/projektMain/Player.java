@@ -134,9 +134,13 @@ public class Player {
             // Create a random number between 0.10 - 0.30, with max two decimals
             var randomHealth = (Math.random() * 20 + 10) / 100.0;
             getOlder.health-=randomHealth;
-            if(getOlder.health <= 0){
+
+
+           /* if(getOlder.health <= 0){
                 playerOwnedAnimals.remove(getOlder);
             }
+
+            */
         }
     }
 

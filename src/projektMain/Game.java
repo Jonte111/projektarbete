@@ -182,7 +182,9 @@ public class Game {
                     }
 
                 }
+                //int whoWillDie=0;
                 pointer.playerAnimalsAgeAndDie();
+                //pointer.playerOwnedAnimals.remove();
             }
 
             numberOfRounds--;
