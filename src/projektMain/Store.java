@@ -13,7 +13,7 @@ public class Store {
         String[] animalTypeName = {"katten", "hunden", "fågeln",  "fisken", "hästen"};
         System.out.println("Vad vill du döpa " + animalTypeName[animalType - 1] + "?");
         String name = scanInt.nextLine();
-        System.out.println("Vilket kön? male famale");
+        System.out.println("Vilket kön? male female");
         String gender = scanLine.nextLine().toUpperCase();
         //int animalType= scanInt.nextInt();
         Animal newAnimal = null;
@@ -50,7 +50,7 @@ public class Store {
         for(Animal animal : player.playerOwnedAnimals){
             player.money+=(animal.price*animal.health);
         }
-        System.out.println(player.name +" has got" + player.money);
+        System.out.println(player.name + " has got " + player.money);
     }
 }
 
