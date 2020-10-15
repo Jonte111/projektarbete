@@ -13,7 +13,7 @@ public class Store {
         String[] animalTypeName = {"katten", "hunden", "fågeln",  "fisken", "hästen"};
         System.out.println("Vad vill du döpa " + animalTypeName[animalType - 1] + "?");
         String name = scanInt.nextLine();
-        System.out.println("Vilket kön? male female");
+        System.out.println("Vilket kön? male or female");
         String gender = scanLine.nextLine().toUpperCase();
         //int animalType= scanInt.nextInt();
         Animal newAnimal = null;
