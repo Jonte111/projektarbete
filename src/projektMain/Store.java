@@ -48,7 +48,7 @@ public class Store {
 
     public void sellEverything(Player player) {
         for(Animal animal : player.playerOwnedAnimals){
-            player.money=(animal.price*animal.price);
+            player.money=(animal.price*animal.health);
         }
         System.out.println(player.name +" has got" + player.money);
     }
