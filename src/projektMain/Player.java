@@ -135,4 +135,8 @@ public class Player {
             getOlder.health=getOlder.health-randomHealth;
         }
     }
+
+    public void mateAnimal() {
+
+    }
 }

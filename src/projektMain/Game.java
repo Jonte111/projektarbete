@@ -131,6 +131,11 @@ public class Game {
 
                     }
                     case 4 -> {
+                        boolean mated = false;
+                        while(!mated){
+                            pointer.mateAnimal();
+
+                        }
 
                     }
                     case 5 -> {
