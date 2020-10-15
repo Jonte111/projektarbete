@@ -11,6 +11,7 @@ public class Player {
     public ArrayList<Food> playerOwnedFood = new ArrayList<>();
     Scanner scanLine = new Scanner(System.in);
     Random rand = new Random();
+    Store store = new Store();
 
     //The two arrays dont need to be in the constructor because they always are the same.
     //You only need it in the constructor when it can change between new instances
@@ -137,6 +138,41 @@ public class Player {
     }
 
     public void mateAnimal() {
+        System.out.println("Vilka djur vill du para? Måste vara olika djurtyper och olika kön\n" +
+                "Första djuret:");
+        String firstAnimal = scanLine.nextLine();
+        System.out.println("Andra djuret:");
+        String secondAnimal = scanLine.nextLine();
+        for(var animalOne: playerOwnedAnimals){
+            if(animalOne.name.equals(firstAnimal)){
+                for(var animalTwo : playerOwnedAnimals){
+                    if(animalTwo.name.equals(secondAnimal)){
+                        if(animalOne.getClass().equals(animalTwo.getClass())){
+                            int offSpring = rand.nextInt(2);
+                            if(offSpring==1){
+                                var animalType = animalOne.getClass().getSimpleName();
+                                if(animalType.equals("Cat")){
+                                    playerOwnedAnimals.add(store.createNewAnimal(1));
+                                }else if(animalType.equals("Dog")){
+                                    playerOwnedAnimals.add(store.createNewAnimal(2));
+                                }else if(animalType.equals("Bird")){
+                                    playerOwnedAnimals.add(store.createNewAnimal(3));
+                                }else if(animalType.equals("Fish")){
+                                    playerOwnedAnimals.add(store.createNewAnimal(4));
+                                }else if(animalType.equals("Horse")){
+                                    playerOwnedAnimals.add(store.createNewAnimal(5));
+                                }
 
+                            }else{
+                                System.out.println("Inga djur från parningen");
+                            }
+
+                        }
+
+
+                    }
+                }
+            }
+        }
     }
 }
