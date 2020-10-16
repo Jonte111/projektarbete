@@ -30,13 +30,8 @@ public class Game {
         while(numberOfRounds > 0){
             for(var pointer: players){
                 System.out.println("--------------------------------------");
-                //--------------------------
-                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
-                        "följande djur");
-                pointer.getOwnedAnimals();
-                System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
-                pointer.getOwnedFood();
-                //-------------------------------------------
+                pointer.printOutEverything();
+
                 System.out.println("Vad vill du göra?:\n" +
                         "Köpa ett djur(1)\n" +
                         "Sälja ett djur(2)\n" +
@@ -69,13 +64,8 @@ public class Game {
                                     System.out.println("No money!");
                                 }
 
-                            //-----------------------------------
-                            System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
-                                    "följande djur");
-                            pointer.getOwnedAnimals();
-                            System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
-                            pointer.getOwnedFood();
-                            //-------------------------------------
+                            pointer.printOutEverything();
+
                             System.out.println("Vill du fortsätta köpa djur? tryck 1 annars 0");
                             caseOneChoise=scanInt.nextInt();
                         }
@@ -88,13 +78,8 @@ public class Game {
                                 System.out.println("Vad vill du sälja?");
                                 var animal = scanLine.nextLine();
                                 pointer.money += pointer.sellAnimal(animal);
-                                //-----------------------------------------
-                                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
-                                        "följande djur");
-                                pointer.getOwnedAnimals();
-                                System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
-                                pointer.getOwnedFood();
-                                //--------------------------------------
+                                pointer.printOutEverything();
+
                                 System.out.println("Vill du sälja fler djur (1) annars (0)");
                                 caseTwoChoice=scanInt.nextInt();
                             }else{
@@ -119,13 +104,8 @@ public class Game {
                                     System.out.println("NEED MORE MINERALS");
                                 }
 
-                            //-----------------------------------
-                            System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
-                                    "följande djur");
-                            pointer.getOwnedAnimals();
-                            System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
-                            pointer.getOwnedFood();
-                            //-------------------------------------
+                            pointer.printOutEverything();
+
                             System.out.println("Vill du köpa mer mat?(1) eller (0) för att sluta");
                             caseThreeChoice= scanInt.nextInt();
                             pointer.removeCheats();
@@ -167,13 +147,8 @@ public class Game {
                                 var animal = scanLine.nextLine();
                                 pointer.feedAnimal(animal);
 
-                                //-----------------------------------
-                                System.out.println("Player"+pointer.name+ " har "+ pointer.money+" kr " + "och äger " +
-                                        "följande djur");
-                                pointer.getOwnedAnimals();
-                                System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
-                                pointer.getOwnedFood();
-                                //-------------------------------------
+                                pointer.printOutEverything();
+
                                 System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
                                 caseFiveChoice=scanInt.nextInt();
                                 pointer.removeCheats();
@@ -185,9 +160,7 @@ public class Game {
                     }
 
                 }
-                //int whoWillDie=0;
                 pointer.playerAnimalsAgeAndDie();
-                //pointer.playerOwnedAnimals.remove();
             }
 
             numberOfRounds--;
