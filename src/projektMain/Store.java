@@ -15,7 +15,7 @@ public class Store {
         String name = scanInt.nextLine();
         System.out.println("Vilket kön? male or female");
         String gender = scanLine.nextLine().toUpperCase();
-        while (!gender.equals("MALE")||!gender.equals("FEMALE")){
+        while (!gender.equals("MALE")&&!gender.equals("FEMALE")){
             System.out.println("Vilket kön? male or female");
             gender = scanLine.nextLine().toUpperCase();
         }
@@ -47,7 +47,6 @@ public class Store {
         }
         return newFood;
     }
-
 
     public void sellEverything(Player player) {
         for(Animal animal : player.playerOwnedAnimals){
