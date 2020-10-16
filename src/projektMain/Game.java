@@ -86,13 +86,15 @@ public class Game {
                                 System.out.println("Vem vill du sälja?");
                                 pointer.getOwnedAnimals();
                                 var animal = scanLine.nextLine();
-                                pointer.money += pointer.sellAnimal(animal);
+                                //pointer.money += pointer.sellAnimal(animal);
+                                store.sellAnimal(pointer, animal);
                                 pointer.printOutEverything();
 
                                 System.out.println("Vill du sälja fler djur (1) annars (0)");
                                 caseTwoChoice=scanInt.nextInt();
                             }else{
                                 System.out.println("Du har inget att sälja");
+                                caseTwoChoice=0;
                             }
 
                         }

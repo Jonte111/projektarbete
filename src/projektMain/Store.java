@@ -54,6 +54,24 @@ public class Store {
         }
         System.out.println(player.name + " has got " + (Math.round(player.money*100)/100.0));
     }
+
+    public void sellAnimal(Player player, String animal) {
+        for(int i = player.playerOwnedAnimals.size()-1; i>=0; i--){
+            if(player.playerOwnedAnimals.get(i).name.equals(animal)){
+                player.money+=(player.playerOwnedAnimals.get(i).price*player.playerOwnedAnimals.get(i).health);
+                player.playerOwnedAnimals.remove(i);
+            }
+        }
+
+        /*
+        for(Animal sellAnimal: player.playerOwnedAnimals){
+            if(sellAnimal.name.equals(animal)){
+                player.money+=(sellAnimal.price*sellAnimal.health);
+                player.playerOwnedAnimals.remove(sellAnimal);
+            }
+        }
+        */
+    }
 }
 
 
