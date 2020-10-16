@@ -12,7 +12,7 @@ public class Game {
         Scanner scanLine = new Scanner(System.in);
         String playerName;
         int playerNum = 1;
-        int animalType;
+        int animalType=0;
         int caseOneChoise=1;
         int caseTwoChoice=1;
         int caseThreeChoice=1;
@@ -39,27 +39,29 @@ public class Game {
                         "Para djuren(4)\n" +
                         "Föda djuren(5)");
                 int choice = scanInt.nextInt();
-                while (choice<1 || choice>5){//Makes sure number is 1,2,3 or 4
-                    System.out.println("Du måste skriva 1,2,3 eller 4");
+                while (choice<1 || choice>5){//Makes sure number is 1,2,3,4 or 5
+                    System.out.println("Du måste skriva 1,2,3, 4 eller 5");
                     choice=scanInt.nextInt();
                 }
+
                 switch(choice){
                     case 1 -> {
                         caseOneChoise=1;
-                        while(caseOneChoise==1){
-
-                            System.out.println("Vilket djur vill du köpa?\n"+
-                                    "Katt(1) pris 100kr\n"+
-                                    "Hund(2) pris 150kr\n"+
-                                    "Fågel(3) pris 50kr\n"+
-                                    "Fisk(4) pris 25kr\n"+
-                                    "Häst(5) pris 200kr");
+                        while(caseOneChoise==1){System.out.println("Vilket djur vill du köpa?\n"+
+                                "Katt(1) pris 100kr\n"+
+                                "Hund(2) pris 150kr\n"+
+                                "Fågel(3) pris 50kr\n"+
+                                "Fisk(4) pris 25kr\n"+
+                                "Häst(5) pris 200kr");
                             animalType = scanInt.nextInt();
+                            while(animalType<1||animalType>5){
+                                System.out.println("Måste vara ett nummer mellan 1 och 5");
+                                animalType = scanInt.nextInt();
+                            }
                             var newAnimal = store.createNewAnimal(animalType);
                                 if(pointer.money> newAnimal.getPrice()){
                                     pointer.playerOwnedAnimals.add(newAnimal);
                                     pointer.money -= newAnimal.getPrice();
-
                                 }else{
                                     System.out.println("No money!");
                                 }
