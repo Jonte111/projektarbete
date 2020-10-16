@@ -74,7 +74,7 @@ public class Game {
                                 caseOneChoise=scanInt.nextInt();
                             }catch (InputMismatchException e){
                                 scanInt.nextLine();// Must have to remove the bad input.
-                                System.out.println("Du måste skriva en siffra när det efterfrågas");
+                                System.out.println("Du måste skriva en siffra i Game när det efterfrågas");
                             }
                         }
 
