@@ -29,6 +29,13 @@ public class Game {
 
         //Playing the rounds
         while(numberOfRounds > 0){
+            for(int i = players.size()-1 ; i >=0; i--){
+                if(players.get(i).money ==0 && players.get(i).playerOwnedAnimals.isEmpty()){
+                    System.out.println(players.get(i).name + " lost.");
+                    players.remove(i);
+
+                }
+            }
             for(var pointer: players){
                 System.out.println("--------------------------------------");
                 pointer.printOutEverything();
@@ -62,7 +69,10 @@ public class Game {
                                     animalType = scanInt.nextInt();
                                 }
                                 var newAnimal = store.createNewAnimal(animalType);
-                                if(pointer.money> newAnimal.getPrice()){
+                                var one = pointer.money;
+                                var two = newAnimal.getPrice();
+                                var three = one - two;
+                                if(three>=0){
                                     pointer.playerOwnedAnimals.add(newAnimal);
                                     pointer.money -= newAnimal.getPrice();
                                 }else{
