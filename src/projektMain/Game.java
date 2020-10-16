@@ -49,11 +49,11 @@ public class Game {
                         while(caseOneChoise==1){
 
                             System.out.println("Vilket djur vill du köpa?\n"+
-                                    "Katt(1)\n"+
-                                    "Hund(2)\n"+
-                                    "Fågel(3)\n"+
-                                    "Fisk(4)\n"+
-                                    "Häst(5)");
+                                    "Katt(1) pris 100kr\n"+
+                                    "Hund(2) pris 150kr\n"+
+                                    "Fågel(3) pris 50kr\n"+
+                                    "Fisk(4) pris 25kr\n"+
+                                    "Häst(5) pris 200kr");
                             animalType = scanInt.nextInt();
                             var newAnimal = store.createNewAnimal(animalType);
                                 if(pointer.money> newAnimal.getPrice()){
@@ -92,9 +92,9 @@ public class Game {
                         caseThreeChoice=1;
                         while(caseThreeChoice ==1){
                             System.out.println("Vilken typ av foder vill du köpa?\n"+
-                                    "Köttätare(1) för katt, hund, fågel och fisk\n"+
-                                    "Växtätare(2) för häst\n"+
-                                    "Allätare(3) för hund, fågel och fisk");
+                                    "Köttätare(1) pris 5kr, för katt, hund, fågel och fisk\n"+
+                                    "Växtätare(2) pris 5kr för häst\n"+
+                                    "Allätare(3) pris 10kr för hund, fågel och fisk");
                             var foodType = scanInt.nextInt();
                             var newFood = store.createNewFood(foodType); //sends type of food wanted
                                 if(pointer.money>= newFood.getPrice()){
