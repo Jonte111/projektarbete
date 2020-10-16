@@ -200,7 +200,6 @@ public class Player {
     }
 
     public void printOutEverything() {
-        System.out.println("Test att det fungerar");
         System.out.println("Player " + name + " har "+  money+" kr " + "och äger följande djur");
         getOwnedAnimals();
         System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");

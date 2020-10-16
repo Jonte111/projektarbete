@@ -20,7 +20,7 @@ public class Game {
         int caseFiveChoice;
 
         while(numberOfPlayers > 0){
-            System.out.println("Vad vill du döpa spelar " +playerNum +" till?");
+            System.out.println("Vad vill du döpa spelare " +playerNum +" till?");
             playerName=scanLine.nextLine();
             players.add( new Player(playerName, 1000));
             numberOfPlayers--;
@@ -83,7 +83,8 @@ public class Game {
                         caseTwoChoice=1;
                         while(caseTwoChoice==1){
                             if(!pointer.playerOwnedAnimals.isEmpty()){
-                                System.out.println("Vad vill du sälja?");
+                                System.out.println("Vem vill du sälja?");
+                                pointer.getOwnedAnimals();
                                 var animal = scanLine.nextLine();
                                 pointer.money += pointer.sellAnimal(animal);
                                 pointer.printOutEverything();
