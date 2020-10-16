@@ -206,4 +206,17 @@ public class Player {
         System.out.println("och följande foder: c för carnivore, h för herbivore, o för omnivore");
         getOwnedFood();
     }
+
+    public boolean haveAnimalsToMate() {
+      for(var animal1 : playerOwnedAnimals){
+          for(var animal2 : playerOwnedAnimals){
+              if(animal1.getClass().equals(animal2.getClass())&&!animal1.gender.equals(animal2.gender)){
+                  System.out.println("Du har djur som går att para");
+                  return true;
+              }
+          }
+      }
+        System.out.println("Du har inte djur som går att para");
+        return false;
+    }
 }

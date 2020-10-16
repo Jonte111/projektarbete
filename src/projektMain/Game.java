@@ -114,15 +114,11 @@ public class Game {
 
                     }
                     case 4 -> {
-                        int tries = 0;
                         boolean mated = false;
-                        int numberAnimals=0;
-                        for(var animal: pointer.playerOwnedAnimals){
-                            numberAnimals++;
-                        }
-                        while(!mated&&numberAnimals>=2){
 
-                            tries++;
+                        boolean canMate = pointer.haveAnimalsToMate();
+                        while(!mated&&canMate){
+
                             int animal = pointer.mateAnimal();
                             if(animal >0 && animal <= 5) {
                                 pointer.playerOwnedAnimals.add(store.createNewAnimal(animal));
