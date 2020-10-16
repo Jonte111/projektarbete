@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
-    public int name;
+    public String name;
     public double money;
     public ArrayList<Animal> playerOwnedAnimals = new ArrayList<>();
     public ArrayList<Food> playerOwnedFood = new ArrayList<>();
@@ -17,7 +17,7 @@ public class Player {
     //You only need it in the constructor when it can change between new instances
     //Player always start with two empty arraylists.
 
-    public Player(int name, double money) {
+    public Player(String name, double money) {
         this.name = name;
         this.money = money;
     }

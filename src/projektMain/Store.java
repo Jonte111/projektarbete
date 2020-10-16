@@ -52,7 +52,7 @@ public class Store {
         for(Animal animal : player.playerOwnedAnimals){
             player.money+=(animal.price*animal.health);
         }
-        System.out.println(player.name + " has got " + player.money);
+        System.out.println(player.name + " has got " + (Math.round(player.money*100)/100.0));
     }
 }
 

@@ -10,6 +10,7 @@ public class Game {
     public Game(int numberOfPlayers, int numberOfRounds){
         Scanner scanInt = new Scanner(System.in);
         Scanner scanLine = new Scanner(System.in);
+        String playerName;
         int playerNum = 1;
         int animalType;
         int caseOneChoise=1;
@@ -18,7 +19,9 @@ public class Game {
         int caseFiveChoice;
 
         while(numberOfPlayers > 0){
-            players.add( new Player(playerNum, 1000));
+            System.out.println("Vad vill du döpa spelar " +playerNum +" till?");
+            playerName=scanLine.nextLine();
+            players.add( new Player(playerName, 1000));
             numberOfPlayers--;
             playerNum++;
         }
