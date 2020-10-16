@@ -188,7 +188,11 @@ public class Game {
         for(Player player : players){
             store.sellEverything(player);
         }
-
+        for(int j =0; j<= players.size()-1; j++){
+            int k =j;
+            k++;
+            System.out.println((k)+ "a " + players.get(j).name);
+        }
 
 
     }
