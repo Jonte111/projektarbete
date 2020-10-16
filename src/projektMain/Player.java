@@ -30,7 +30,7 @@ public class Player {
             for(var animalPointer: playerOwnedAnimals) {
                 System.out.println(animalPointer.name +" "
                         + animalPointer.getClass().getSimpleName()+ " "
-                        + animalPointer.gender +" "+ (Math.round(animalPointer.health*100)/100.0) + " health points");
+                        + animalPointer.gender +" "+ (Math.round(animalPointer.health*100)) + " health points");
             }
         }
 
@@ -171,23 +171,17 @@ public class Player {
                                 var animalType = animalOne.getClass().getSimpleName();
                                 if(animalType.equals("Cat")){
                                     return 1;
-                                    //playerOwnedAnimals.add(store.createNewAnimal(1));
                                 }else if(animalType.equals("Dog")){
                                     return 2;
-                                    //playerOwnedAnimals.add(store.createNewAnimal(2));
                                 }else if(animalType.equals("Bird")){
                                     return 3;
-                                    //playerOwnedAnimals.add(store.createNewAnimal(3));
                                 }else if(animalType.equals("Fish")){
                                     return 4;
-                                   // playerOwnedAnimals.add(store.createNewAnimal(4));
                                 }else if(animalType.equals("Horse")){
                                     return 5;
-                                   // playerOwnedAnimals.add(store.createNewAnimal(5));
                                 }else{
-                                    System.out.println("something went wrong");
-
-                                    return 0;
+                                    System.out.println("Something went wrong");
+                                    return 6;
                                 }
 
                             }else{
