@@ -1,6 +1,7 @@
 package projektMain;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
@@ -47,13 +48,19 @@ public class Game {
                 switch(choice){
                     case 1 -> {
                         caseOneChoise=1;
-                        while(caseOneChoise==1){System.out.println("Vilket djur vill du köpa?\n"+
+                        while(caseOneChoise==1){
+                            System.out.println("Vilket djur vill du köpa?\n"+
                                 "Katt(1) pris 100kr\n"+
                                 "Hund(2) pris 150kr\n"+
                                 "Fågel(3) pris 50kr\n"+
                                 "Fisk(4) pris 25kr\n"+
                                 "Häst(5) pris 200kr");
-                            animalType = scanInt.nextInt();
+                            try{
+                                animalType = scanInt.nextInt();
+                            }catch (InputMismatchException e){
+                                System.out.println("Måste vara en siffra");
+                            }
+
                             while(animalType<1||animalType>5){
                                 System.out.println("Måste vara ett nummer mellan 1 och 5");
                                 animalType = scanInt.nextInt();
