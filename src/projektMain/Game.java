@@ -49,34 +49,33 @@ public class Game {
                     case 1 -> {
                         caseOneChoise=1;
                         while(caseOneChoise==1){
-                            System.out.println("Vilket djur vill du köpa?\n"+
-                                "Katt(1) pris 100kr\n"+
-                                "Hund(2) pris 150kr\n"+
-                                "Fågel(3) pris 50kr\n"+
-                                "Fisk(4) pris 25kr\n"+
-                                "Häst(5) pris 200kr");
                             try{
+                                System.out.println("Vilket djur vill du köpa?\n"+
+                                        "Katt(1) pris 100kr\n"+
+                                        "Hund(2) pris 150kr\n"+
+                                        "Fågel(3) pris 50kr\n"+
+                                        "Fisk(4) pris 25kr\n"+
+                                        "Häst(5) pris 200kr");
                                 animalType = scanInt.nextInt();
-                            }catch (InputMismatchException e){
-                                System.out.println("Måste vara en siffra");
-                            }
-
-                            while(animalType<1||animalType>5){
-                                System.out.println("Måste vara ett nummer mellan 1 och 5");
-                                animalType = scanInt.nextInt();
-                            }
-                            var newAnimal = store.createNewAnimal(animalType);
+                                while(animalType<1||animalType>5){
+                                    System.out.println("Måste vara ett nummer mellan 1 och 5");
+                                    animalType = scanInt.nextInt();
+                                }
+                                var newAnimal = store.createNewAnimal(animalType);
                                 if(pointer.money> newAnimal.getPrice()){
                                     pointer.playerOwnedAnimals.add(newAnimal);
                                     pointer.money -= newAnimal.getPrice();
                                 }else{
                                     System.out.println("No money!");
                                 }
+                                pointer.printOutEverything();
 
-                            pointer.printOutEverything();
-
-                            System.out.println("Vill du fortsätta köpa djur? tryck 1 annars 0");
-                            caseOneChoise=scanInt.nextInt();
+                                System.out.println("Vill du fortsätta köpa djur? tryck 1 annars 0");
+                                caseOneChoise=scanInt.nextInt();
+                            }catch (InputMismatchException e){
+                                scanInt.nextLine();// Must have to remove the bad input.
+                                System.out.println("Du måste skriva en siffra när det efterfrågas");
+                            }
                         }
 
                     }
