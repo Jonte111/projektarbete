@@ -101,7 +101,7 @@ public class Game {
                                     pointer.playerOwnedFood.add(newFood);
                                     pointer.money -= newFood.getPrice();
                                 }else{
-                                    System.out.println("NEED MORE MINERALS");
+                                    System.out.println("NEED MORE MONEY!");
                                 }
 
                             pointer.printOutEverything();
@@ -114,12 +114,15 @@ public class Game {
 
                     }
                     case 4 -> {
+                        int tries = 0;
                         boolean mated = false;
                         int numberAnimals=0;
                         for(var animal: pointer.playerOwnedAnimals){
                             numberAnimals++;
                         }
                         while(!mated&&numberAnimals>=2){
+
+                            tries++;
                             int animal = pointer.mateAnimal();
                             if(animal >0 && animal <= 5) {
                                 pointer.playerOwnedAnimals.add(store.createNewAnimal(animal));

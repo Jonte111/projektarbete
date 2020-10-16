@@ -158,12 +158,12 @@ public class Player {
         String firstAnimal = scanLine.nextLine();
         System.out.println("Andra djuret:");
         String secondAnimal = scanLine.nextLine();
-        for(var animalOne: playerOwnedAnimals){
-            if(animalOne.name.equals(firstAnimal)){
-                for(var animalTwo : playerOwnedAnimals){
-                    if(animalTwo.name.equals(secondAnimal)){
-                        if(animalOne.getClass().equals(animalTwo.getClass())&&
-                                !animalOne.gender.equals(animalTwo.gender)){
+        for(var animalOne: playerOwnedAnimals){//searches after firstAnimal
+            if(animalOne.name.equals(firstAnimal)){//if finds firstAnimal
+                for(var animalTwo : playerOwnedAnimals){//searches for secondAnimal
+                    if(animalTwo.name.equals(secondAnimal)){//if finds secondAnimal
+                        if(animalOne.getClass().equals(animalTwo.getClass())&& //if they are same species
+                                !animalOne.gender.equals(animalTwo.gender)){//and different gender
 
                             int offSpring = rand.nextInt(2);
                             if(offSpring==1){// try with return and then add it in case
@@ -190,8 +190,8 @@ public class Player {
                             }
                             //return true;
                         }
-
-
+                        return 6;
+                        //If animals are not of same species and different gender.
                     }
                 }
             }
