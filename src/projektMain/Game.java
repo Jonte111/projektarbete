@@ -92,21 +92,25 @@ public class Game {
                     case 2 -> {
                         caseTwoChoice=1;
                         while(caseTwoChoice==1){
-                            if(!pointer.playerOwnedAnimals.isEmpty()){
-                                System.out.println("Vem vill du sälja?");
-                                pointer.getOwnedAnimals();
-                                var animal = scanLine.nextLine();
-                                //pointer.money += pointer.sellAnimal(animal);
-                                store.sellAnimal(pointer, animal);
-                                pointer.printOutEverything();
+                            try{
+                                if(!pointer.playerOwnedAnimals.isEmpty()){
+                                    System.out.println("Vem vill du sälja?");
+                                    pointer.getOwnedAnimals();
+                                    var animal = scanLine.nextLine();
+                                    //pointer.money += pointer.sellAnimal(animal);
+                                    store.sellAnimal(pointer, animal);
+                                    pointer.printOutEverything();
 
-                                System.out.println("Vill du sälja fler djur (1) annars (0)");
-                                caseTwoChoice=scanInt.nextInt();
-                            }else{
-                                System.out.println("Du har inget att sälja");
-                                caseTwoChoice=0;
+                                    System.out.println("Vill du sälja fler djur (1) annars (0)");
+                                    caseTwoChoice=scanInt.nextInt();
+                                }else{
+                                    System.out.println("Du har inget att sälja");
+                                    caseTwoChoice=0;
+                                }
+                            }catch (InputMismatchException e){
+                                scanInt.nextLine();// Must have to remove the bad input.
+                                System.out.println("Du måste skriva en siffra i Game när det efterfrågas");
                             }
-
                         }
                     }
                     case 3 -> {
