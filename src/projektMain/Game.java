@@ -149,18 +149,22 @@ public class Game {
 
                         boolean canMate = pointer.haveAnimalsToMate();
                         while(!mated&&canMate){
-
-                            int animal = pointer.mateAnimal();
-                            if(animal >0 && animal <= 5) {
-                                pointer.playerOwnedAnimals.add(store.createNewAnimal(animal));
-                                mated = true;
-                            }
-                            else if(animal==0){
-                                mated=true;
-                            }else if(animal==6){
-                                System.out.println("Du försökte para något som inte går, försök igen");
-                            }else{
-                                System.out.println("Något gick fel, försök igen.");
+                            try{
+                                int animal = pointer.mateAnimal();
+                                if(animal >0 && animal <= 5) {
+                                    pointer.playerOwnedAnimals.add(store.createNewAnimal(animal));
+                                    mated = true;
+                                }
+                                else if(animal==0){
+                                    mated=true;
+                                }else if(animal==6){
+                                    System.out.println("Du försökte para något som inte går, försök igen");
+                                }else{
+                                    System.out.println("Något gick fel, försök igen.");
+                                }
+                            }catch (InputMismatchException e){
+                                scanInt.nextLine();// Must have to remove the bad input.
+                                System.out.println("Du måste skriva en siffra i Game när det efterfrågas");
                             }
                         }
                     }
