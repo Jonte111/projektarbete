@@ -116,12 +116,13 @@ public class Game {
                     case 3 -> {
                         caseThreeChoice=1;
                         while(caseThreeChoice ==1){
-                            System.out.println("Vilken typ av foder vill du köpa?\n"+
-                                    "Köttätare(1) pris 5kr, för katt, hund, fågel och fisk\n"+
-                                    "Växtätare(2) pris 5kr för häst\n"+
-                                    "Allätare(3) pris 10kr för hund, fågel och fisk");
-                            var foodType = scanInt.nextInt();
-                            var newFood = store.createNewFood(foodType); //sends type of food wanted
+                            try{
+                                System.out.println("Vilken typ av foder vill du köpa?\n"+
+                                        "Köttätare(1) pris 5kr, för katt, hund, fågel och fisk\n"+
+                                        "Växtätare(2) pris 5kr för häst\n"+
+                                        "Allätare(3) pris 10kr för hund, fågel och fisk");
+                                var foodType = scanInt.nextInt();
+                                var newFood = store.createNewFood(foodType); //sends type of food wanted
                                 if(pointer.money>= newFood.getPrice()){
                                     pointer.playerOwnedFood.add(newFood);
                                     pointer.money -= newFood.getPrice();
@@ -129,11 +130,16 @@ public class Game {
                                     System.out.println("NEED MORE MONEY!");
                                 }
 
-                            pointer.printOutEverything();
+                                pointer.printOutEverything();
 
-                            System.out.println("Vill du köpa mer mat?(1) eller (0) för att sluta");
-                            caseThreeChoice= scanInt.nextInt();
-                            pointer.removeCheats();
+                                System.out.println("Vill du köpa mer mat?(1) eller (0) för att sluta");
+                                caseThreeChoice= scanInt.nextInt();
+                                pointer.removeCheats();
+                            }catch (InputMismatchException e){
+                                scanInt.nextLine();// Must have to remove the bad input.
+                                System.out.println("Du måste skriva en siffra i Game när det efterfrågas");
+                            }
+
 
                         }
 
