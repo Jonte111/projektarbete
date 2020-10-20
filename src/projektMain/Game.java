@@ -127,7 +127,7 @@ public class Game {
                                     pointer.playerOwnedFood.add(newFood);
                                     pointer.money -= newFood.getPrice();
                                 }else{
-                                    System.out.println("NEED MORE MONEY!");
+                                    System.out.println("Du har för lite pengar!");
                                 }
 
                                 pointer.printOutEverything();

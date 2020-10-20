@@ -10,6 +10,7 @@ public class Player {
     public ArrayList<Animal> playerOwnedAnimals = new ArrayList<>();
     public ArrayList<Food> playerOwnedFood = new ArrayList<>();
     Scanner scanLine = new Scanner(System.in);
+    Scanner scanInt = new Scanner(System.in);
     Random rand = new Random();
     Store store = new Store();
 
@@ -66,50 +67,60 @@ public class Player {
                         "Växtätare(h) för häst(h)\n"+
                         "Allätare(o) för hund, fågel och fisk(o)");
                 String food = scanLine.nextLine().toUpperCase();
+                System.out.println("Hur mycket mat vill du ge? Måste vara heltal");
+                int amountFood = scanInt.nextInt();
+                int one=0;//Will add how much food
+                int two=0;//Will add how much food you are trying to feed
                 for(var foodPointer : playerOwnedFood){
-                    System.out.println("HEJ" + foodPointer.name);
                     if(foodPointer.name.equals(food)){
-                        if(feedPointer.getClass().getSimpleName().equals("Cat")){
-                            if(foodPointer.name.equals("C")){
-                                feedPointer.health= feedPointer.health+0.1; //Increases health with 0.1 (10%)
-                                foodPointer.kg= foodPointer.kg-1;
-                                return;
-                            }else{
-                                System.out.println("Djurplågeri!!!");
+                        one= (int) foodPointer.kg;
+                        two = one - amountFood;
+                        if(two >= 0){
+                            if(feedPointer.getClass().getSimpleName().equals("Cat")){
+                                if(foodPointer.name.equals("C")){
+                                    feedPointer.health= feedPointer.health+(0.1*amountFood); //Increases health with 0.1 (10%)
+                                    foodPointer.kg= foodPointer.kg-amountFood;
+                                    return;
+                                }else{
+                                    System.out.println("Djurplågeri!!!");
+                                }
+                            }else if(feedPointer.getClass().getSimpleName().equals("Dog")){
+                                if(foodPointer.name.equals("C")|| foodPointer.name.equals("O")){
+                                    feedPointer.health= feedPointer.health+(0.1*amountFood); //Increases health with 0.1 (10%)
+                                    foodPointer.kg= foodPointer.kg-amountFood;
+                                    return;
+                                }else{
+                                    System.out.println("Djurplågeri!!!");
+                                }
+                            }else if(feedPointer.getClass().getSimpleName().equals("Bird")){
+                                if(foodPointer.name.equals("C")|| foodPointer.name.equals("O")){
+                                    feedPointer.health= feedPointer.health+(0.1*amountFood); //Increases health with 0.1 (10%)
+                                    foodPointer.kg= foodPointer.kg-amountFood;
+                                    return;
+                                }else{
+                                    System.out.println("Djurplågeri!!!");
+                                }
+                            }else if(feedPointer.getClass().getSimpleName().equals("Fish")) {
+                                if (foodPointer.name.equals("C") || foodPointer.name.equals("O")) {
+                                    feedPointer.health = feedPointer.health + (0.1*amountFood); //Increases health with 0.1 (10%)
+                                    foodPointer.kg = foodPointer.kg - amountFood;
+                                    return;
+                                } else {
+                                    System.out.println("Djurplågeri!!!");
+                                }
+                            }else if(feedPointer.getClass().getSimpleName().equals("Häst")) {
+                                if (foodPointer.name.equals("H")) {
+                                    feedPointer.health = feedPointer.health + (0.1*amountFood); //Increases health with 0.1 (10%)
+                                    foodPointer.kg = foodPointer.kg - amountFood;
+                                    return;
+                                } else {
+                                    System.out.println("Djurplågeri!!!");
+                                }
                             }
-                        }else if(feedPointer.getClass().getSimpleName().equals("Dog")){
-                            if(foodPointer.name.equals("C")|| foodPointer.name.equals("O")){
-                                feedPointer.health= feedPointer.health+0.1; //Increases health with 0.1 (10%)
-                                foodPointer.kg= foodPointer.kg-1;
-                                return;
-                            }else{
-                                System.out.println("Djurplågeri!!!");
-                            }
-                        }else if(feedPointer.getClass().getSimpleName().equals("Bird")){
-                            if(foodPointer.name.equals("C")|| foodPointer.name.equals("O")){
-                                feedPointer.health= feedPointer.health+0.1; //Increases health with 0.1 (10%)
-                                foodPointer.kg= foodPointer.kg-1;
-                                return;
-                            }else{
-                                System.out.println("Djurplågeri!!!");
-                            }
-                        }else if(feedPointer.getClass().getSimpleName().equals("Fish")) {
-                            if (foodPointer.name.equals("C") || foodPointer.name.equals("O")) {
-                                feedPointer.health = feedPointer.health + 0.1; //Increases health with 0.1 (10%)
-                                foodPointer.kg = foodPointer.kg - 1;
-                                return;
-                            } else {
-                                System.out.println("Djurplågeri!!!");
-                            }
-                        }else if(feedPointer.getClass().getSimpleName().equals("Häst")) {
-                            if (foodPointer.name.equals("H")) {
-                                feedPointer.health = feedPointer.health + 0.1; //Increases health with 0.1 (10%)
-                                foodPointer.kg = foodPointer.kg - 1;
-                                return;
-                            } else {
-                                System.out.println("Djurplågeri!!!");
-                            }
+                        }else{
+                            System.out.println("Du har inte så mycket mat");
                         }
+
                     }
                 }
             }
