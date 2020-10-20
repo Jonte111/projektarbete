@@ -233,6 +233,7 @@ public class Game {
         for(Player player : players){
             store.sellEverything(player);
         }
+        players.sort((Player a, Player b) -> { return a.money > b.money ? -1 : 1; });
         for(int j =0; j<= players.size()-1; j++){
             int k =j;
             k++;
