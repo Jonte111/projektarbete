@@ -175,17 +175,23 @@ public class Game {
                         if(!pointer.playerOwnedFood.isEmpty()){
                             pointer.removeCheats();
                             while(caseFiveChoice==1&&!pointer.playerOwnedFood.isEmpty()){
-                                pointer.removeCheats();
-                                pointer.getOwnedAnimals();
-                                System.out.println("Vem vill du ge mat till?");
-                                var animal = scanLine.nextLine();
-                                pointer.feedAnimal(animal);
+                                try{
+                                    pointer.removeCheats();
+                                    pointer.getOwnedAnimals();
+                                    System.out.println("Vem vill du ge mat till?");
+                                    var animal = scanLine.nextLine();
+                                    pointer.feedAnimal(animal);
 
-                                pointer.printOutEverything();
+                                    pointer.printOutEverything();
 
-                                System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
-                                caseFiveChoice=scanInt.nextInt();
-                                pointer.removeCheats();
+                                    System.out.println("Vill du fortsätta ge djur mat?(1) annars (0)");
+                                    caseFiveChoice=scanInt.nextInt();
+                                    pointer.removeCheats();
+                                }catch (InputMismatchException e){
+                                    scanInt.nextLine();// Must have to remove the bad input.
+                                    System.out.println("Du måste skriva en siffra i Game när det efterfrågas");
+                                }
+
                             }
                         }else{
                             System.out.println("Du har inget att mata med.");
