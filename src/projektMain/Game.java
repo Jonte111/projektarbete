@@ -151,13 +151,21 @@ public class Game {
                     }
                     case 4 -> {
                         boolean mated = false;
-
+                        int litterSize = 0;
                         boolean canMate = pointer.haveAnimalsToMate();
                         while(!mated&&canMate){
                             try{
                                 int animal = pointer.mateAnimal();
                                 if(animal >0 && animal <= 5) {
-                                    pointer.playerOwnedAnimals.add(store.breedAnimal(animal));
+                                    if(animal==1){litterSize=5;}
+                                    if(animal==2){litterSize=5;}
+                                    if(animal==3){litterSize=3;}
+                                    if(animal==4){litterSize=4;}
+                                    if(animal==5){litterSize=1;}
+                                    while(litterSize>0){
+                                        pointer.playerOwnedAnimals.add(store.breedAnimal(animal));
+                                        litterSize--;
+                                    }
                                     mated = true;
                                 }
                                 else if(animal==0){

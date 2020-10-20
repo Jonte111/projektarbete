@@ -103,6 +103,7 @@ public class Store {
         Random rand = new Random();
         Scanner scanInt = new Scanner(System.in);
         Scanner scanLine = new Scanner(System.in);
+
         int genderRand = rand.nextInt(2);
         String gender="MALE";
         if(genderRand ==0){
