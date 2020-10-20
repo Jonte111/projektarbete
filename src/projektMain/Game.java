@@ -205,7 +205,7 @@ public class Game {
         for(int j =0; j<= players.size()-1; j++){
             int k =j;
             k++;
-            System.out.println((k)+ "a " + players.get(j).name);
+            System.out.println((k)+ "a: " + players.get(j).name);
         }
 
 
