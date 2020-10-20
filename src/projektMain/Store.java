@@ -1,5 +1,6 @@
 package projektMain;
 
+import java.util.Random;
 import java.util.Scanner;
 enum gender{
     MALE,
@@ -67,6 +68,38 @@ public class Store {
             }
         }
         */
+    }
+
+    public Animal breedAnimal(int animal) {
+        Random rand = new Random();
+        Scanner scanInt = new Scanner(System.in);
+        Scanner scanLine = new Scanner(System.in);
+        int genderRand = rand.nextInt(2);
+        String gender="MALE";
+        if(genderRand ==0){
+            gender="MALE";
+        }else{
+            gender="FEMALE";
+        }
+        String[] animalTypeName = {"katten", "hunden", "fågeln",  "fisken", "hästen"};
+        System.out.println(gender.equals("MALE")? "Vad vill du döpa manliga "+ animalTypeName[animal - 1] + " till?"
+                : "Vad vill du döpa kvinnliga " + animalTypeName[animal - 1] + " till?");
+        //System.out.println("Vad vill du döpa " + animalTypeName[animal - 1] + "?");
+        String name = scanInt.nextLine();
+
+
+        Animal newAnimal = null;
+        switch(animal) {
+            case 1 -> newAnimal = new Cat(name, gender);
+            case 2 -> newAnimal = new Dog(name, gender);
+            case 3 -> newAnimal = new Bird(name, gender);
+            case 4 -> newAnimal = new Fish(name, gender);
+            case 5 -> newAnimal = new Horse(name, gender);
+        }
+
+        return newAnimal;
+
+
     }
 }
 
