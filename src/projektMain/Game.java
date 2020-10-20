@@ -154,6 +154,11 @@ public class Game {
                         int litterSize = 0;
                         boolean canMate = pointer.haveAnimalsToMate();
                         while(!mated&&canMate){
+                            System.out.println("Katter kan få 5 barn\n" +
+                                    "Hundar kan få 5 barn\n" +
+                                    "Fåglar kan få 3 barn\n" +
+                                    "Fiskar kan få 4 barn\n" +
+                                    "Hästar kan få 1 barn");
                             try{
                                 int animal = pointer.mateAnimal();
                                 if(animal >0 && animal <= 5) {
