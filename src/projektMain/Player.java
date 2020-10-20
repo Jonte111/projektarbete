@@ -178,7 +178,7 @@ public class Player {
 
                             int offSpring = rand.nextInt(2);
                             if(offSpring==1){// try with return and then add it in case
-                                System.out.println("Grattis det blev en avkomma");
+                                System.out.println("Grattis det blev en avkomma!");
                                 var animalType = animalOne.getClass().getSimpleName();
                                 if(animalType.equals("Cat")){
                                     return 1;
@@ -228,5 +228,16 @@ public class Player {
       }
         System.out.println("Du har inte djur som går att para");
         return false;
+    }
+
+    public void addAllFood() {
+        for (var addFood: playerOwnedFood){
+            for( var addFood2: playerOwnedFood){
+                if(addFood.getClass()== addFood2.getClass()){
+                    addFood.kg+=addFood2.kg;
+                    addFood2.kg=0.0;
+                }
+            }
+        }
     }
 }

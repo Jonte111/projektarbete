@@ -31,18 +31,47 @@ public class Store {
 
         return newAnimal;
     }
-    public Food createNewFood(int foodType){
+    public Food createNewFood(Player player, int foodType){
+        boolean exist = false;
         Scanner scanDouble = new Scanner(System.in);
         System.out.println("Hur många kg mat vill du köpa?");
         double kg = scanDouble.nextDouble();
-        Food newFood = null;
-        switch(foodType){
-            case 1 -> newFood = new CarnivoreFood(kg);
-            case 2 -> newFood = new HerbivoreFood(kg);
-            case 3 -> newFood = new OmnivoreFood(kg);
+        if(foodType==1){
+            for(var alreadyHave: player.playerOwnedFood){
+                if(alreadyHave.name.equals("C")){
+                    alreadyHave.kg+=kg;
+                    player.money-=(kg*alreadyHave.price);
+                    exist=true;
+                }
+            }
+        }if(foodType==2){
+            for(var alreadyHave: player.playerOwnedFood){
+                if(alreadyHave.name.equals("H")){
+                    alreadyHave.kg+=kg;
+                    player.money-=(kg*alreadyHave.price);
+                    exist=true;
+                }
+            }
+        }if(foodType==3){
+            for(var alreadyHave: player.playerOwnedFood){
+                if(alreadyHave.name.equals("O")){
+                    alreadyHave.kg+=kg;
+                    player.money-=(kg*alreadyHave.price);
+                    exist=true;
+                }
+            }
+        }
+        if(!exist){
+            Food newFood = null;
+            switch(foodType){
+                case 1 -> newFood = new CarnivoreFood(kg);
+                case 2 -> newFood = new HerbivoreFood(kg);
+                case 3 -> newFood = new OmnivoreFood(kg);
+            }
+            return newFood;
         }
 
-        return newFood;
+        return null;
     }
 
     public void sellEverything(Player player) {

@@ -117,18 +117,23 @@ public class Game {
                         caseThreeChoice=1;
                         while(caseThreeChoice ==1){
                             try{
+
                                 System.out.println("Vilken typ av foder vill du köpa?\n"+
                                         "Köttätare(1) pris 5kr, för katt, hund, fågel och fisk\n"+
                                         "Växtätare(2) pris 5kr för häst\n"+
                                         "Allätare(3) pris 10kr för hund, fågel och fisk");
                                 var foodType = scanInt.nextInt();
-                                var newFood = store.createNewFood(foodType); //sends type of food wanted
-                                if(pointer.money>= newFood.getPrice()){
-                                    pointer.playerOwnedFood.add(newFood);
-                                    pointer.money -= newFood.getPrice();
-                                }else{
-                                    System.out.println("Du har för lite pengar!");
+                                var newFood = store.createNewFood(pointer, foodType); //sends type of food wanted
+                                if(newFood != null){
+                                    if(pointer.money>= newFood.getPrice()){
+                                        pointer.playerOwnedFood.add(newFood);
+                                        pointer.money -= newFood.getPrice();
+                                    }else{
+                                        System.out.println("Du har för lite pengar!");
+                                    }
                                 }
+
+
 
                                 pointer.printOutEverything();
 
