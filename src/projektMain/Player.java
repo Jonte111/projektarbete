@@ -130,28 +130,13 @@ public class Player {
     public void removeCheats() {
         playerOwnedFood.removeIf(cheater -> cheater.kg <= 0);
     }
-    /*
-    public void removeCheats() {
-        for(var cheater: playerOwnedFood){
-            if(cheater.kg<= 0){
-                playerOwnedFood.remove(cheater);
-            }
-        }
-    }
 
-     */
     public void playerAnimalsAgeAndDie() {
         for(var getOlder: playerOwnedAnimals){
             // Create a random number between 0.10 - 0.30, with max two decimals
             var randomHealth = (Math.random() * 20 + 10) / 100.0;
             getOlder.health-=randomHealth;
 
-
-           /* if(getOlder.health <= 0){
-                playerOwnedAnimals.remove(getOlder);
-            }
-
-            */
         }
         for(int i = playerOwnedAnimals.size()-1; i >=0; i--){
             if(playerOwnedAnimals.get(i).health<= 0){
